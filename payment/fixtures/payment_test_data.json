@@ -1,0 +1,27 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "test@gmail.com",
+            "first_name": "A",
+            "last_name": "User",
+            "is_active": 1,
+            "is_superuser": 0,
+            "is_staff": 0,
+            "last_login": "2009-09-15 04:17:39",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$b1471$98f399e0f40fb567b6a401dea95b7b534aba4ae7",
+            "email": "test@gmail.com",
+            "date_joined": "2011-09-15 04:17:39"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "users.profile",
+        "fields": {
+            "user": 1
+        }
+    }
+]

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Payment canceled{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+        <h2>{% trans "Subscription canceled" %}</h2>
+        <p>{% trans "Payment have been canceled." %}
+            {% trans "You can always upgrade later from your personal account page." %}</p>
+        <br><br>
+    </div>
+
+{% endblock %}

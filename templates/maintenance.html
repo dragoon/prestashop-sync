@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Maintenance{% endblock %}
+
+{% block extra-head %}
+    <link type="text/css" media="screen, projection" rel="stylesheet" href="{{ STATIC_URL }}css/main_short.css"/>
+{% endblock %}
+
+{% block header %}
+    {% include "partial/headers/header_small.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="maintenance">
+    <img src="{{ STATIC_URL }}images/maintenance.png">
+    <h2>We're changing our hosting provider and will be back in a few hours.<br>
+        Sorry for the inconvenience.</h2>
+    </div>
+{% endblock %}

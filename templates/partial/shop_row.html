@@ -1,0 +1,28 @@
+{% load i18n %}
+<tr id="shop_{{ shop.id }}">
+    <td>
+        <a data-hash="" title="Load {{ shop.title }}" class="shop-load" href="{% url load_shop shop.id %}">{{ shop.title }}</a>
+        <br>
+        <a class="domain" title="{% trans "Go to " %}{{ shop.domain }}" target="_blank" href="http://{{ shop.domain }}">
+            <span>{{ shop.domain }}</span>
+            <img height="11" width="11" src="{{ STATIC_URL }}images/transparent.png">
+        </a>
+    </td>
+    <td class="sync-type">{{ shop.get_sync_type_display }}</td>
+    {% comment %}
+    <td class="key">
+        <a href="#" class="link-button small">{% trans "Set key" %}</a>
+        <input autocomplete="off" size="8" type="text" name="key" value="{{ shop.key }}" style="display:none;">
+    </td>
+    {% endcomment %}
+    <td class="status">
+        <a title="{% trans "Update status" %}" href="{% url shop_status shop.id %}" data-shop="{{ shop.id }}" class="update {{ shop.status }}"></a>
+        <a title="{{ shop.error_status }}" href="#" {% if shop.is_ok %}style="display:none;"{% endif %}>{% trans "More..." %}</a>
+    </td>
+    <td class="actions">
+        {% for action, values in shop.actions %}
+            <a class="{{ action }} {% if not shop.is_ok and action == "add" %}disabled{% endif %}"
+               data-shop="{{ shop.id }}" href="{{ values.url }}" title="{{ values.title }}"></a>
+        {% endfor %}
+    </td>
+</tr>

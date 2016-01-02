@@ -1,0 +1,36 @@
+<!-- UWSGI XML Configuration File -->
+<!-- http://brandonkonkle.com/blog/2010/sep/14/django-uwsgi-and-nginx/
+     http://klen.github.com/uwsgi-nginx-ru.html
+     -->
+<uwsgi>
+
+    <!-- Unix socket -->
+    <socket>/tmp/prestashop-sync.sock</socket>
+
+    <!-- Path to application -->
+    <pythonpath>/var/www/prestashop-sync</pythonpath>
+
+    <!-- WSGI python module, e.g. wsgi.py -->
+    <module>wsgi</module>
+
+    <!-- Number of processes -->
+    <processes>5</processes>
+
+    <!-- Max connections per process -->
+    <max-requests>1000</max-requests>
+
+    <!-- Max request size -->
+    <buffer-size>32768</buffer-size>
+
+    <!-- Kill requests that last more than 120 seconds -->
+    <harakiri>120</harakiri>
+
+    <!-- POST request buffering-->
+    <post-buffering>10240</post-buffering>
+    <post-buffering-bufsize>65536</post-buffering-bufsize>
+
+    <reload-mercy>8</reload-mercy>
+    <master />
+    <no-orphans />
+
+</uwsgi>

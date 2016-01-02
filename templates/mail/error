@@ -1,0 +1,5 @@
+Client error occured
+Domain: {{ domain }}
+Data List: {{ data_list|safe }}
+Full Data: {{ full_data|safe }}
+Message: {{ message|safe }}

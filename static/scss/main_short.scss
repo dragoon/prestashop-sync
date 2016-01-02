@@ -1,0 +1,33 @@
+// CSS for the short version of main page (for registered users)
+
+body {
+  background-position: center 80px;
+}
+
+.info-left {
+  display: none;
+}
+
+#add_shop {
+  margin-top: 10px;
+}
+
+.main-form-wrapper .left {
+  width: 703px;
+}
+
+.standard-form.main label {
+  width: 365px;
+}
+
+#drop_zone {
+  margin-left: 368px;
+}
+
+table.shop-table th:first-child, table.shop-table td:first-child {
+  width: 260px;
+}
+
+table.shop-table th.sync_type {
+  width: 196px;
+}

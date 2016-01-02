@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Options{% endblock %}
+
+{% block extra-head %}
+    <link type="text/css" media="screen, projection" rel="stylesheet" href="{{ STATIC_URL }}css/main_short.css"/>
+{% endblock %}
+
+{% block header %}
+    {% include "partial/headers/header_small.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="hidden">
+        <div id="details_free">
+            <div class="details">
+                <h2>{% trans "Free sync plan" %}</h2>
+                {% blocktrans %}
+                <ul>
+                    <li><b>Email support is possible in this plan, but not guaranteed.</b>
+                    <br><br>We will most likely respond to any kind of error happened during
+                    any operation supported by the service, though we will not make any assumptions on
+                    how long will it take to fix the error.</li>
+                    <li>
+                        <b>Scheduled Syncs are not possible in this plan.</b>
+                        <br><br>The reason is that background sync requires
+                        additional processing resources that generate extra cost
+                        to the hosting provider.
+                    </li>
+                    <li>
+                        <b>Limited manual syncs - 30 free syncs.</b>
+                        <br><br>Manual syncs are limited due to the same reason as scheduled&nbsp;syncs -
+                        additional resources. 30 manual syncs we grant after registration
+                        should be more than enough to try the service and decide whether you want to
+                        use it or not.
+                        <br><br>Manual syncs with a CSV file are also limited by sync duration time,
+                        the maximum duration time for a free plan is <b>5 minutes</b>, which should
+                        be enough to sync up to 500 products, but this number can depend on your hosting
+                        speed.
+                    </li>
+                </ul>
+                <div class="alert">You can upgrade to <b>business plan</b> at any time.</div>
+                {% endblocktrans %}
+            </div>
+        </div>
+        <div id="details_business">
+            <div class="details">
+                <h2>{% trans "Business sync plan" %}</h2>
+                {% blocktrans %}
+                    <ul>
+                        <li><b>Full email support.</b>
+                            <br><br>We will help you to set up integration with the service
+                            in case something goes wrong with the set up described in the manual.
+                            We guarantee to respond within 1 business day to any problem you encoutered
+                            while performing the operations supported by the service.
+                            Fixing your problems will be prioritized in our schedule.
+                        </li>
+                        <li>
+                            <b>Unlimited Scheduled Syncs.</b>
+                            <br><br>You can set up any number of Scheduled Sync for
+                            your shops.
+                        </li>
+                        <li>
+                            <b>Unlimited manual syncs.</b>
+                            <br><br>You can perform any number of manual syncs at any time!
+                        </li>
+                    </ul>
+                {% endblocktrans %}
+            </div>
+        </div>
+    </div>
+    <div id="price_container">
+        <div class="pricingtable featured">
+            <div class="top">
+                <h2>{% trans "Free" %}</h2>
+            </div>
+            <ul>
+                <li>{% blocktrans %}<strong>Limited</strong> Email Support{% endblocktrans %}</li>
+                <li>{% blocktrans %}<strong>No</strong> Scheduled Sync{% endblocktrans %}</li>
+                <li>{% blocktrans %}<strong>Limited</strong> Manual Sync{% endblocktrans %}</li>
+            </ul>
+            <hr />
+            <h1>0 €</h1>
+            <p class="date">{% trans "per month" %}</p>
+
+            {% if request.user.is_guest %}
+            <a href="{% url register_ajax plan=1 %}" rel="facebox" class="btn btn-primary">{% trans "Sign up" %}</a>
+            {% endif %}
+            <p>
+                <br>
+                <a class="alt" rel="facebox" href="#details_free">{% trans "detailed information" %}</a>
+            </p>
+            <br>
+        </div>
+        <div class="pricingtable">
+            <div class="top">
+                <h2>{% trans "Small business" %}</h2>
+            </div>
+            <ul>
+                <li>{% blocktrans %}<strong>Limited</strong> Email Support{% endblocktrans %}</li>
+                <li>{% blocktrans %}<strong>Full</strong> Scheduled Sync{% endblocktrans %}</li>
+                <li>{% blocktrans %}<strong>Unlimited</strong> Manual Sync{% endblocktrans %}</li>
+            </ul>
+            <hr />
+            <h1>5 €</h1>
+            <p class="date">{% trans "per month" %}</p>
+            {% if request.user.is_guest %}
+                <a href="{% url register_ajax plan=2 %}" rel="facebox" class="btn btn-primary">{% trans "Sign up" %}</a>
+            {% else %}
+                <a href="{% url payment_small_business %}" class="btn btn-primary">{% trans "Upgrade" %}</a>
+            {% endif %}
+            <p>
+                <br>
+            </p>
+            <br>
+        </div>
+        <div class="pricingtable featured">
+            <div class="top">
+                <h2>{% trans "Business" %}</h2>
+            </div>
+            <ul>
+                <li>{% blocktrans %}<strong>Full</strong> Email Support{% endblocktrans %}</li>
+                <li>{% blocktrans %}<strong>Full</strong> Scheduled Sync{% endblocktrans %}</li>
+                <li>{% blocktrans %}<strong>Unlimited</strong> Manual Sync{% endblocktrans %}</li>
+            </ul>
+            <hr />
+            <h1>15 €</h1>
+            <p class="date">{% trans "per month" %}</p>
+            {% if request.user.is_guest %}
+            <a href="{% url register_ajax plan=2 %}" rel="facebox" class="btn btn-primary">{% trans "Sign up" %}</a>
+            {% else %}
+                <a href="{% url payment %}" class="btn btn-primary">{% trans "Upgrade" %}</a>
+            {% endif %}
+            <p>
+                <br>
+                <a class="alt" rel="facebox" href="#details_business">{% trans "detailed information" %}</a>
+            </p>
+            <br>
+        </div>
+    </div>
+{% endblock %}

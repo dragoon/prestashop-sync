@@ -1,0 +1,74 @@
+{% load i18n %}
+<div id="edit_shop_wrapper">
+    <div id="empty_row">
+    </div>
+    <div class="product-image-upload drop-zone" data-upload-url="{% url add_images 0 %}" data-clear-url="{% url remove_images 0 %}">
+        <div>{% trans "Images for" %} <span class="product-title"></span></div>
+    </div>
+    <form class="standard-form add-shop-products-form" method="post" action="{% url add_data shop.id %}">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        <h2 class="maroon-small-heading">{% trans "Add Products for" %} {{ shop.title }}</h2>
+        <br>
+        <div class="wrapper">
+            <div class="formset">
+            {% for form in formset %}
+                <div class="row">
+                    {{ form.order }}
+                    <ul>
+                        <li>
+                            <label for="{{ form.name.html_name }}">{{ form.name.label }}:</label>
+                            {{ form.name }}
+                        </li>
+                        <li>
+                            <label for="{{ form.category.html_name }}">{{ form.category.label }}:</label>
+                            {{ form.category }}
+                        </li>
+                        <li>
+                            <label for="{{ form.price.html_name }}">{{ form.price.label }}:</label>
+                            {{ form.price }}
+                        </li>
+                        <li>
+                            <label for="{{ form.quantity.html_name }}">{{ form.quantity.label }}:</label>
+                            {{ form.quantity }}
+                        </li>
+                    </ul>
+                    {% with form.description as field %}
+                    <div class="description">
+                        <label for="{{ field.html_name }}">{{ field.label }}:</label>
+                        {{ field }}
+                    </div>
+                    {% endwith %}
+                    <div class="images">
+                        <span>{% trans "Images:" %}</span>
+                        <div>
+                            <ul class="file-list">
+                            </ul>
+                            <div class="drop-zone" data-upload-url="{% url add_images forloop.counter0 %}" data-clear-url="{% url remove_images forloop.counter0 %}">
+                                <div>{% trans "Drag images here." %}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="remove" {% if forloop.first %}style="display: none"{% endif %}>
+                        <a href="#" title="{% trans "Remove product" %}">{% trans "Remove" %}</a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="add-more">
+                <a href="#" title="{% trans "Add more" %}">{% trans "Add more" %}</a>
+            </div>
+        </div>
+        <div class="submit-wrapper">
+            <div class="drop-zone small" data-upload-url="{% url upload_add_csv %}" data-clear-url="{% url clear_add_csv %}" id="add_products_csv">
+                <div>{% trans "Drag csv file for bulk upload here." %}
+                    <sup><a title="
+                    {% trans "Products in a following format: <br><pre>&amp;lt;TITLE&amp;gt;,&amp;lt;CATEGORY&amp;gt;,&amp;lt;PRICE>,&amp;lt;QUANTITY&amp;gt;,&amp;lt;DESCRIPTION&amp;gt;</pre>" %}<a href='{{ manual_url }}#add_data' target='_blank'>{% trans "More info on this" %}</a>"
+                            class="help-link" target="_blank" href="{{ manual_url }}#add_data">?</a></sup>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <input class="link-button" type="submit" value="{% trans "Submit" %}">
+        </div>
+    </form>
+</div>

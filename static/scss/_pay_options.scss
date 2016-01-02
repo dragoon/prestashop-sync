@@ -1,0 +1,159 @@
+#price_container {
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.details {
+  width: 550px;
+  padding: 10px;
+
+  ul li {
+    margin-bottom: 20px;
+  }
+}
+
+.pricingtable {
+  width: 250px;
+  vertical-align: middle;
+  background: #fff;
+  margin: 5px;
+  display: inline-block;
+
+  @include border-radius(10px);
+  @include box-shadow(rgba(0, 0, 0, 0.3) 2px 2px 9px);
+
+  .top {
+    width: 250px;
+    height: 50px;
+    background: #2F2E35;
+    background: sprite($icons, top_background) repeat-x;
+    @include border-radius(10px 10px 0 0);
+
+    h2 {
+      color: #fff;
+      text-align: center;
+      font: 300 30px/50px Helvetica, Verdana, sans-serif;
+      margin: 0;
+    }
+  }
+
+  ul {
+    font: 300 18px/2 Helvetica, Verdana, sans-serif;
+    margin: 20px 0 0 45px;
+    padding: 0;
+
+    strong {
+      font-weight: bold;
+    }
+
+    li {
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font: bold 88px/1 'banda-regular-normal', 'Trebuchet MS', Trebuchet, sans-serif;
+    margin: 20px 0 0 0;
+    letter-spacing: -15px;
+
+    span {
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+
+    &.date {
+      font: 500 14px/1 Helvetica, Verdana, sans-serif;
+      color: #9d9fa1;
+    }
+  }
+
+  hr {
+    border: 0;
+    background-color: #BCBEC0;
+    color: #BCBEC0;
+    height: 1px;
+    width: 190px;
+    margin: 20px 0 0 30px;
+  }
+
+  a.btn {
+    display: block;
+    height: 40px;
+    width: 150px;
+    color: #fff;
+    margin: 25px 0 0 50px;
+    padding: 0;
+    @include border-radius(10px);
+
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font: 500 16px/40px Helvetica, Verdana, sans-serif;
+  }
+
+  &.featured {
+    @include scale(0.9, 0.9);
+  }
+}
+
+// Payment page
+
+form.payment {
+  button {
+    width: 190px;
+  }
+  h2 {
+    vertical-align: middle;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  input.main {
+    width: 90px;
+  }
+}
+
+.notice {
+  background-color: #FFE899;
+}
+
+input.main, select.main {
+  border: 0;
+  font-family: Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color:  #444;
+  @include border-radius(0);
+}
+
+select.main {
+  padding: 5px;
+}
+
+.payment-logo {
+  display: inline-block;
+  width: 102px;
+  height: 64px;
+
+  &.visa {
+    background: sprite($payment, visa) no-repeat;
+  }
+
+  &.mastercard {
+    background: sprite($payment, mastercard) no-repeat;
+  }
+
+  &.paypal {
+    background: sprite($payment, paypal) no-repeat;
+  }
+
+  &.amex {
+    background: sprite($payment, amex) no-repeat;
+  }
+}

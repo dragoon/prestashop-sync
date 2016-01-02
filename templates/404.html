@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Page not found" %}{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+        <h2>{% trans "The page you requested could not be found" %}.</h2>
+    </div>
+{% endblock %}

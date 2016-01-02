@@ -1,0 +1,35 @@
+{% load i18n %}
+<div class="auth-form policy">
+    <div class="auth-form-panel left">
+        <div class="auth-form-panel-inner">
+            <form action="{% url loginza_login %}" method="get">
+                <span style="margin-top: 10px;">{% trans "Register with" %}:</span>
+                <iframe src="http://loginza.ru/api/widget?overlay=loginza&token_url=http://{{ request.get_host }}/loginza_login/&providers_set={% if LANGUAGE_CODE == "ru" %}vkontakte,facebook,google,yandex,mailruapi,twitter,rambler,lastfm{% else %}facebook,google,twitter,lastfm{% endif %}&lang={{ LANGUAGE_CODE }}"
+                        style="width:330px;height:190px;" scrolling="no" frameborder="no"></iframe>
+            </form>
+        </div>
+    </div>
+    <div class="auth-form-panel right">
+        <div class="auth-form-panel-inner">
+            <div>
+                <form id="register_form" method="post" action="{% url register %}" class="standard-form login-form">
+                    {% csrf_token %}
+                    <ul>
+                        {{ register_form.as_ul }}
+                        <li class="right-text-align">
+                            <input type="submit" class="link-button" value="{% trans "Register" %}">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% url terms as termsurl %}
+    {% url policy as policyurl %}
+    <div class="terms-note">
+        {% blocktrans %}
+            By registering in <b>Prestashop-Sync service</b> you agree with our
+            <a href="{{ termsurl }}">Terms&nbsp;of&nbsp;service</a> & <a href="{{ policyurl }}">Privacy&nbsp;policy</a>
+        {% endblocktrans %}
+    </div>
+</div>

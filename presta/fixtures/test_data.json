@@ -1,0 +1,53 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "user_a@example.com",
+            "first_name": "Prokofyev",
+            "last_name": "Roman",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2011-10-20 10:41:32",
+            "groups": [],
+            "user_permissions": [],
+            "password": "!",
+            "email": "user_a@example.com",
+            "date_joined": "2011-10-20 10:41:30"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "users.profile",
+        "fields": {
+            "activation_key": null,
+            "uid": "http://openid.yandex.ru/roman-prokofyev/",
+            "dob": null,
+            "gender": null,
+            "session": null,
+            "groups": [],
+            "provider": "http://openid.yandex.ru/server/",
+            "user_permissions": []
+        }
+    },
+    {
+        "pk": 1,
+        "model": "presta.shop",
+        "fields": {
+            "status": "green",
+            "last_update_time": "2011-12-13 20:15:04",
+            "domain": "localhost:8080/prestashop",
+            "sync_type": "EAN13",
+            "temp": false,
+            "title": "Localhost",
+            "interval": 60,
+            "location": null,
+            "version": "0",
+            "user": 1,
+            "key": "CH0EVLRYYY9X6MIX2J4ZTWHZ65UG8WVI",
+            "error_status": null,
+            "is_schedule_enabled": false
+        }
+    }
+]

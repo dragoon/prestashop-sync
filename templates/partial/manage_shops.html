@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    $(function(){
+        $('table.shop-table td.status a:last[title]').tooltip({tipClass:'shoptooltip'});
+    });
+</script>
+{% load i18n %}
+<div id="shop_table_wrapper" {% if not shop_list %}style="display:none;"{% endif %} class="left">
+    <table cellspacing=0 class="shop-table">
+        <thead>
+            <tr>
+                <th>{% trans "Title" %}</th>
+                <th class="sync_type">{% trans "Sync type" %}</th>
+                <!--<th class="key">{% trans "Secret key" %}</th>-->
+                <th class="status">{% trans "Status" %}</th>
+                <th class="actions">{% trans "Actions" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for shop in shop_list %}
+                {% include "partial/shop_row.html" %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="clear"></div>
+    <div id="add_shop">
+        {% if request.user.is_guest %}
+            <a id="please_register_dialog" href="#" class="btn btn-primary">{% trans "Add shop" %}</a>
+        {% else %}
+            <a href="#add_shop_form_dialog" rel="facebox" class="btn btn-primary">{% trans "Add shop" %}</a>
+        {% endif %}
+    </div>
+</div>

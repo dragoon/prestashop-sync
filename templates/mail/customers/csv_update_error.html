@@ -1,0 +1,14 @@
+{% load i18n %}
+{% language language %}
+{% blocktrans %}
+Our apologise,
+your recent periodic product update on Prestashop-Sync service has failed to complete successfully.
+CSV file contains the following errors:
+
+{{ message|safe }}
+
+Sincerely,
+Prestashop-Sync Team.
+{% endblocktrans %}
+{% endlanguage %}
+

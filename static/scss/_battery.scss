@@ -1,0 +1,36 @@
+.battery.label {
+  padding: 3px 7px 3px 7px;
+  width: 154px;
+  text-align: center;
+
+  .battery-container {
+    width: 150px;
+    padding: 3px 2px 3px 2px;
+    background-color: $btnPrimaryBackgroundHighlight;
+    background-image: -webkit-linear-gradient(0deg, transparent 80%, transparent, rgba(0, 0, 0, 1) 20%);
+    background-size: 13px;
+
+    &.warning {
+      background-color: $btnPrimaryBackgroundHighlight;
+    }
+
+    &.danger {
+      background-color: $btnPrimaryBackgroundHighlight;
+    }
+
+    .filler {
+      display: inline-block;
+      height: 12px;
+    }
+  }
+
+  .counter {
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 3px;
+  }
+
+  &:hover .counter {
+    display: inline;
+  }
+}

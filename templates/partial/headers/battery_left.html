@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load url from future %}
+<div class="battery label" data-url="{% url "battery" %}">
+    {% if not request.user.syncs_left %}
+        <div class="hidden" id="battery_exhausted_watermark"></div>
+    {% endif %}
+    <span class="counter {% if request.user.syncs_left %}hidden{% endif %}"><span class="exact-count">{{ request.user.syncs_left }}</span> {% trans "syncs left" %}</span>
+    <div class="battery-container" style="width: {{ request.user.sync_abs_width }}px;">
+        <div class="filler"></div>
+    </div>
+</div>

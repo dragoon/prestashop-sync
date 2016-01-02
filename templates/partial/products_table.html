@@ -1,0 +1,35 @@
+{% load i18n %}
+{% include "partial/pagination.html" with flip="flip" %}
+<form method="POST" action="{% url update_data_single %}">
+    <table class="sync-data zebra-striped">
+        <thead>
+        <tr>
+            <th class="checkbox"><input type="checkbox" class="all"></th>
+            <th class="sync-type">{{ sync_type }}</th>
+            <th>{% trans "Title" %}</th>
+            <th>{% trans "Attributes" %}</th>
+            <th class="quantity">{% trans "Quantity" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in data %}
+            {% with values=row.5 %}
+            <tr>
+                <td><input type="checkbox" name="product"></td>
+                <td>{% if sync_type == "ID" %}{{ start_index|add:forloop.counter }}{% else %}{{ row.2 }}{% endif %}</td>
+                <td>{{ row.3 }}</td>
+                <td>{{ row.4 }}</td>
+                <td>
+                    <input type="hidden" name="id" value="{{ row.0 }}">
+                    <input type="hidden" name="id_attribute" value={{ row.1 }}>
+                    <input type="hidden" name="ean13" value={{ row.2 }}>
+                    <input type="number" name="quantity" {% if values.combination %}disabled {% endif %}value="{{ values.quantity }}">
+                </td>
+            </tr>
+            {% endwith %}
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include "partial/pagination.html" %}
+    <div style="clear:both"></div>
+</form>

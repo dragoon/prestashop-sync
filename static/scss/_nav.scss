@@ -1,0 +1,111 @@
+/*-------- Header navigation ------------*/
+#nav {
+  color: #FFF;
+  clear: both;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 auto 25px;
+  padding-left: 60px;
+  padding-right: 60px;
+  height: 33px;
+  width: 530px;
+  background: sprite($icons, top_background) repeat-x;
+  @include border-radius(0 0 30px 30px);
+  text-align: center
+}
+
+#nav li {
+  margin: 0 0;
+  display: inline-block;
+  position: relative;
+  list-style: none;
+}
+
+/* main level link */
+#nav a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 8px 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  @include single-transition(all, 0.1s, ease-in, 0);
+}
+
+#nav a.active, #nav a:hover {
+  color: $linkGreenHighlight;
+}
+
+/*Footer links*/
+
+#footer {
+  background: url(/static/images/bg1.png) repeat;
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  color: #f1f1f1;
+}
+
+#footer #footer_wrapper {
+  width: 550px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#footer_logo {
+  position: absolute;
+  background: sprite($icons, white_logo) no-repeat;
+  left: -210px;
+  top: 15px;
+}
+
+#footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-right: 40px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#footer ul:last-of-type {
+  margin-right: 0;
+}
+
+#footer ul li {
+  margin-bottom: 10px;
+}
+
+#footer ul li:first-child {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#footer #social_pane {
+  position: absolute;
+  right: -330px;
+  top: 20px;
+  width: 300px;
+}
+
+#footer {
+
+  #copy {
+    // TODO: make inset text
+    margin-top: 10px;
+    font-size: 12px;
+    color: #717171;
+    text-align: center;
+  }
+
+  #version {
+    position: absolute;
+    left: -205px;
+    top: 90px;
+    font-size: 12px;
+    color: #46bf08;
+  }
+}
+

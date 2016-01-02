@@ -1,0 +1,6 @@
+{% load i18n %}
+<h2>{% trans "Invalid transaction" %}</h2>
+{% blocktrans %}
+    <p>Sorry, we could not find your payment. If you actually made a payment, please
+        contact us at <a href="mailto:support@prestashop-sync.com">support@prestashop-sync.com</a></p>
+{% endblocktrans %}

@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% load i18n %}
+
+{% block extra-head %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.facebox({ div: '#request_email_form' }, 'width420');
+
+            $('#facebox form').ajaxForm({
+                beforeSubmit: before_submit,
+                success: function(data, statusText, xhr, $form) {
+                    $form.find('.error').remove();
+                    if (data['result'] == 'success') {
+                        window.location = data['response'];
+                    }
+                    else if (data['result'] == 'error') {
+                        display_form_errors(data['response'], $form);
+                    }
+                    after_submit($form);
+                },
+                dataType: 'json'
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block extra-content %}
+    {# Email form START #}
+    <div style="display:none;" id="request_email_form">
+        <div>{% trans "Please enter your email to complete registration" %}:</div>
+        <form action="{% url add_email %}" method="POST" class="standard-form email">
+            {% csrf_token %}
+            <ul>
+                {{ form.as_ul }}
+                <li style="text-align:right; width: 310px;"><input type="submit" class="link-button" value="{% trans "Register" %}"></li>
+            </ul>
+        </form>
+    </div>
+{% endblock %}

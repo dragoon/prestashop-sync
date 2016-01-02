@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "About" %}{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+        <div id="manual">
+        {% blocktrans %}
+            <strong>Prestashop-Sync Service</strong> is aimed to help merchants that use <a href="http://prestashop.com" rel="nofollow">Prestashop</a> platform in solving their everyday routines.<br/>
+            <br>
+            You can instantly evaluate all functionality and start using the service <strong>without need to register</strong>.<br>
+            <a href="/">Start using it now</a> and tell us what we need to do to make your life easier!<br>
+            <br>
+            <strong>Prestashop-Sync Service</strong> provides following features at the moment:
+            <ul>
+                <li><strong>Bulk quantity update</strong> for all products in your shop. Either using <strong>Prestashop-Sync</strong> web interface or with CSV file.</li>
+                <li><strong>Update schedules</strong>. You can perform scheduled product quantity updates in your shop.
+                Just make update file available online somewhere, set up file location and time interval in the service and you're done.</li>
+                <li>Store and manage multiple shops.</li>
+            </ul>
+            Some features that we are currently working on and soon to release:
+            <ul>
+                <li><del>Create new products with images</del> (Done).</li>
+                <li>Ability to update any product attribute.</li>
+                <li>Ability to manage product images.</li>
+                <li>Bulk coupons import.</li>
+            </ul>
+            Have some annoying issue that you would like to solve? Please, contact us at <a href="mailto:admin@prestashop-sync.com">admin@prestashop-sync.com</a>.
+        {% endblocktrans %}
+        </div>
+    </div>
+{% endblock %}

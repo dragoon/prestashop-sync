@@ -1,0 +1,11 @@
+{% load i18n %}
+<div class="products-table-meta {{ flip }}">
+    <div class="pagination">
+        {% spaceless %}
+            <a {% if not page %}class="hidden"{% endif %} href="{% url get_data_paginated previous %}">« previous</a>
+            <a class="current" href="">[{{ page|add:"1" }}]</a>
+            <a {% if not next %}class="hidden"{% endif %} href="{% url get_data_paginated next %}">next »</a>
+        {% endspaceless %}
+    </div>
+    <a class="save-csv" href="{% url save_csv %}">{% trans "Save data as CSV file" %}</a>
+</div>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+    {% for product in products %}
+    <product>
+        {% if product.manufacturer %}
+            <id_manufacturer xlink:href="{{ prestashop_url }}/api/manufacturers/{{ product.manufacturer }}">{{ product.manufacturer }}</id_manufacturer>
+        {% endif %}
+        {% if product.supplier %}
+        <id_supplier xlink:href="{{ prestashop_url }}/api/suppliers/{{ product.supplier }}">{{ product.supplier }}</id_supplier>
+        {% endif %}
+        <id_category_default xlink:href="{{ prestashop_url }}/api/categories/{{ product.categories.0 }}">{{ product.categories.0 }}</id_category_default>
+        <out_of_stock>2</out_of_stock>
+        <new/>
+        <id_default_combination not_filterable="true"/>
+        <ean13>{{ product.ean13 }}</ean13>
+        <price>{{ product.price }}</price>
+        <active>1</active>
+        <quantity>{{ product.quantity }}</quantity>
+        <meta_description>
+        </meta_description>
+        <meta_keywords>
+        </meta_keywords>
+        <meta_title>
+        </meta_title>
+        <link_rewrite>
+            {% for lang in product.langs %}
+                <language id="{{ lang.id }}" xlink:href="{{ prestashop_url }}/api/languages/{{ lang.id }}">{{ lang.link_rewrite }}</language>
+            {% endfor %}
+        </link_rewrite>
+        <name>
+            {% for lang in product.langs %}
+                <language id="{{ lang.id }}" xlink:href="{{ prestashop_url }}/api/languages/{{ lang.id }}">{{ lang.name }}</language>
+            {% endfor %}
+        </name>
+        <available_now>
+        </available_now>
+        <available_later>
+        </available_later>
+        <description>
+            {% for lang in product.langs %}
+                <language id="{{ lang.id }}" xlink:href="{{ prestashop_url }}/api/languages/{{ lang.id }}"><p>{{ lang.product_desc }}</p></language>
+            {% endfor %}
+        </description>
+        <description_short>
+            {% for lang in product.langs %}
+                <language id="{{ lang.id }}" xlink:href="{{ prestashop_url }}/api/languages/{{ lang.id }}">{{ lang.product_desc_short }}</language>
+            {% endfor %}
+        </description_short>
+        <date_add>{{ date_add|date:"Y-m-d H:is" }}</date_add>
+        <date_upd>{{ date_add|date:"Y-m-d H:is" }}</date_upd>
+        <associations>
+            <categories node_type="category">
+                {% for category in product.categories %}
+                    <category xlink:href="{{ prestashop_url }}/api/categories/{{ category }}">
+                        <id>{{ category }}</id>
+                    </category>
+                {% endfor %}
+            </categories>
+            <images node_type="image">
+            </images>
+        </associations>
+    </product>
+    {% endfor %}
+</prestashop>

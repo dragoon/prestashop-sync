@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Server error" %}{% endblock %}
+
+{% block content %}
+    <div id="main_container">
+        <p>
+            {% trans "Oops! An unexpected error has occurred" %}.<br/>
+            {% trans "Our team has been notified and is working on fixing this problem" %}.
+        </p>
+
+        <p>
+            {% trans "You can return to our" %} <a href="{% url main %}">{% trans "main page" %}</a>.
+        </p>
+    </div>
+{% endblock %}

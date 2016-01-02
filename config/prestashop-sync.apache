@@ -1,0 +1,31 @@
+<VirtualHost *:80>
+    ServerName prestashop-sync.com
+    ServerAlias test.prestashop-sync.com
+    ServerAlias www.prestashop-sync.com
+    ServerAdmin admin@prestashop-sync.com
+
+    LogLevel warn
+    ErrorLog /var/log/apache2/prestashop-sync.apache.error.log
+    CustomLog /var/log/apache2/prestashop-sync.apache.access.log combined
+    DocumentRoot /var/www/prestashop-sync
+
+    Alias /robots.txt /home/dragoon/webapps/django/prestashop-sync/static/robots.txt
+    Alias /favicon.ico /home/dragoon/webapps/django/prestashop-sync/static/images/favicon.ico
+    Alias /media /home/dragoon/webapps/django/prestashop-sync/media
+    <Directory /home/dragoon/webapps/django/prestashop-sync/media>
+        Options -Indexes
+    </Directory>
+    Alias /static/admin /home/dragoon/lib/python2.7/django/contrib/admin/static/admin
+    <Directory /home/dragoon/lib/python2.7/django/contrib/admin/static/admin>
+        Options -Indexes
+    </Directory>
+    Alias /static /home/dragoon/webapps/django/prestashop-sync/static
+    <Directory /home/dragoon/webapps/django/prestashop-sync/static>
+        Options -Indexes
+    </Directory>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+    WSGIScriptAlias / /var/www/prestashop-sync/prestashop-sync.wsgi
+</VirtualHost>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+    {% for product in products %}
+    <product>
+        <id>{{ product.id }}</id>
+        <id_default_image xlink:href="http://{{ prestashop_url }}/api/images/products/{{ product.id }}/{{ product.image_id }}" not_filterable="true">{{ product.image_id }}</id_default_image>
+        <out_of_stock>{{ product.out_of_stock }}</out_of_stock>
+        <price>{{ product.price }}</price>
+        <quantity>{{ product.quantity }}</quantity>
+        <active>1</active>
+        <meta_description>
+        </meta_description>
+        <meta_keywords>
+        </meta_keywords>
+        <meta_title>
+        </meta_title>
+        <link_rewrite>
+        </link_rewrite>
+        <name>
+        </name>
+        <available_now>
+        </available_now>
+        <available_later>
+        </available_later>
+        <description>
+        </description>
+        <description_short>
+        </description_short>
+    </product>
+    {% endfor %}
+</prestashop>

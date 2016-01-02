@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Login" %}{% endblock %}
+{% block content %}
+    <div class="full-form">
+        <div class="auth-form">
+            <div class="auth-form-panel-inner">
+                <div class="login">
+                    <form id="full_login_form" method="post" action="{% url login %}"
+                          class="standard-form login-form">
+                        {% csrf_token %}
+                        <ul>
+                            {{ login_form.as_ul }}
+                            <li><input type="submit" class="link-button"
+                                       value="{% trans "Login" %}"></li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

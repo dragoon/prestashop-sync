@@ -1,0 +1,1716 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-18 01:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Roman Prokofyev <admin@prestashop-sync.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\settings.py:27
+msgid "English"
+msgstr "Английский"
+
+#: .\settings.py:28
+msgid "Russian"
+msgstr "Русский"
+
+#: .\external\articles\admin.py:55
+msgid "Mark select articles as active"
+msgstr ""
+
+#: .\external\articles\admin.py:59
+msgid "Mark select articles as inactive"
+msgstr ""
+
+#: .\external\articles\admin.py:69 .\external\articles\admin.py:74
+#, python-format
+msgid "Set status of selected to \"%s\""
+msgstr ""
+
+#: .\external\articles\forms.py:18
+msgid "Words that describe this article"
+msgstr ""
+
+#: .\external\articles\models.py:25
+msgid "HTML/Plain Text"
+msgstr "HTML/Plain Text"
+
+#: .\external\articles\models.py:26
+msgid "Markdown"
+msgstr "Markdown"
+
+#: .\external\articles\models.py:27
+msgid "ReStructured Text"
+msgstr "ReStructured Text"
+
+#: .\external\articles\models.py:28
+msgid "Textile"
+msgstr "Textile"
+
+#: .\external\articles\models.py:114
+msgid "Article statuses"
+msgstr "Статусы статьи"
+
+#: .\external\articles\models.py:147
+msgid ""
+"Select the type of markup you are using in this article.\n"
+"<ul>\n"
+"<li><a href=\"http://daringfireball.net/projects/markdown/basics\" target="
+"\"_blank\">Markdown Guide</a></li>\n"
+"<li><a href=\"http://docutils.sourceforge.net/docs/user/rst/quickref.html\" "
+"target=\"_blank\">ReStructured Text Guide</a></li>\n"
+"<li><a href=\"http://thresholdstate.com/articles/4312/the-textile-reference-"
+"manual\" target=\"_blank\">Textile Guide</a></li>\n"
+"</ul>"
+msgstr ""
+
+#: .\external\articles\models.py:157
+msgid "Language"
+msgstr "Язык"
+
+#: .\external\articles\models.py:206
+msgid "If omitted, the keywords will be the same as the article tags."
+msgstr ""
+
+#: .\external\articles\models.py:207
+msgid ""
+"If omitted, the description will be determined by the first bit of the "
+"article's content."
+msgstr ""
+
+#: .\external\articles\models.py:213
+msgid "Tags that describe this article"
+msgstr ""
+
+#: .\external\articles\models.py:214
+msgid ""
+"Check this if you want to automatically assign any existing tags to this "
+"article based on its content."
+msgstr ""
+
+#: .\external\articles\models.py:215
+msgid "Select any other articles that this article follows up on."
+msgstr ""
+
+#: .\external\articles\models.py:218
+msgid "The date and time this article shall appear online."
+msgstr ""
+
+#: .\external\articles\models.py:219
+msgid "Leave blank if the article does not expire."
+msgstr ""
+
+#: .\external\articles\models.py:222
+msgid "Enable this if users must login before they can read this article."
+msgstr ""
+
+#: .\external\articles\models.py:224
+msgid "Show AddThis button"
+msgstr ""
+
+#: .\external\articles\models.py:224
+msgid "Check this to show an AddThis bookmark button when viewing an article."
+msgstr ""
+
+#: .\external\articles\models.py:225
+msgid "Use article author's username"
+msgstr ""
+
+#: .\external\articles\models.py:225
+msgid ""
+"Check this if you want to use the article author's username for the AddThis "
+"button.  Respected only if the username field is left empty."
+msgstr ""
+
+#: .\external\articles\models.py:226
+msgid "AddThis Username"
+msgstr ""
+
+#: .\external\articles\models.py:226
+msgid "The AddThis username to use for the button."
+msgstr ""
+
+#: .\external\articles\management\commands\check_for_articles_from_email.py:358
+msgid "Article Posted"
+msgstr ""
+
+#: .\external\articles\management\commands\check_for_articles_from_email.py:359
+#, python-format
+msgid ""
+"Your email (%(title)s) has been posted as an article on %(site_name)s.\n"
+"\n"
+"    http://%(domain)s%(article_url)s"
+msgstr ""
+
+#: .\external\articles\templates\articles\_articles.html.py:4
+#: .\external\articles\templates\articles\_meta.html.py:61
+msgid "Read this article"
+msgstr "Прочитать статью"
+
+#: .\external\articles\templates\articles\_articles.html.py:6
+msgid "Posted on"
+msgstr "Опубликовано"
+
+#: .\external\articles\templates\articles\_articles.html.py:7
+msgid "by"
+msgstr "от"
+
+#: .\external\articles\templates\articles\_articles.html.py:7
+msgid "View articles posted by"
+msgstr ""
+
+#: .\external\articles\templates\articles\_meta.html.py:6
+msgid "Published"
+msgstr "Опубликовано"
+
+#: .\external\articles\templates\articles\_meta.html.py:8
+msgid "Author"
+msgstr "Автор"
+
+#: .\external\articles\templates\articles\_meta.html.py:10
+msgid "Read other articles by this author"
+msgstr "Другие статьи этого автора"
+
+#: .\external\articles\templates\articles\_meta.html.py:13
+msgid "Comments"
+msgstr "Комментарии"
+
+#: .\external\articles\templates\articles\_meta.html.py:15
+msgid "Word Count"
+msgstr "Количество слов"
+
+#: .\external\articles\templates\articles\_meta.html.py:19
+msgid "Next"
+msgstr "Дальше"
+
+#: .\external\articles\templates\articles\_meta.html.py:26
+msgid "Previous"
+msgstr "Назад"
+
+#: .\external\articles\templates\articles\_meta.html.py:43
+msgid "Tags"
+msgstr "Тэги"
+
+#: .\external\articles\templates\articles\_meta.html.py:47
+msgid "Follow-Up Articles"
+msgstr ""
+
+#: .\external\articles\templates\articles\_meta.html.py:51
+msgid "Read this follow-up article"
+msgstr ""
+
+#: .\external\articles\templates\articles\_meta.html.py:51
+#: .\external\articles\templates\articles\_meta.html.py:61
+#: .\external\articles\templates\articles\_meta.html.py:71
+msgid "posted"
+msgstr "опубликовано"
+
+#: .\external\articles\templates\articles\_meta.html.py:57
+msgid "Follows Up On"
+msgstr ""
+
+#: .\external\articles\templates\articles\_meta.html.py:67
+msgid "Related Articles"
+msgstr ""
+
+#: .\external\articles\templates\articles\_meta.html.py:71
+msgid "Read this related article"
+msgstr ""
+
+#: .\external\articles\templates\articles\article_list.html.py:4
+#: .\external\articles\templates\articles\article_list.html.py:7
+msgid "Articles"
+msgstr "Статьи"
+
+#: .\external\articles\templates\articles\article_list.html.py:7
+#: .\external\articles\templates\articles\by_author.html.py:7
+#: .\external\articles\templates\articles\display_tag.html.py:11
+#: .\external\articles\templates\articles\in_month.html.py:7
+#: .\external\articles\templates\articles\uncategorized_article_list.html.py:7
+msgid "page"
+msgstr "страница"
+
+#: .\external\articles\templates\articles\base.html.py:13
+msgid "Article Archives"
+msgstr "Архив статей"
+
+#: .\external\articles\templates\articles\base.html.py:21
+msgid "View articles posted in this month"
+msgstr ""
+
+#: .\external\articles\templates\articles\by_author.html.py:4
+msgid "Articles By Author"
+msgstr ""
+
+#: .\external\articles\templates\articles\by_author.html.py:7
+msgid "Articles By"
+msgstr ""
+
+#: .\external\articles\templates\articles\display_tag.html.py:4
+#: .\external\articles\templates\articles\display_tag.html.py:11
+msgid "Articles Tagged"
+msgstr ""
+
+#: .\external\articles\templates\articles\in_month.html.py:4
+#: .\external\articles\templates\articles\in_month.html.py:7
+msgid "Articles From"
+msgstr "Статьи за"
+
+#: .\external\articles\templates\articles\uncategorized_article_list.html.py:4
+#: .\external\articles\templates\articles\uncategorized_article_list.html.py:7
+msgid "Uncategorized Articles"
+msgstr ""
+
+#: .\payment\templates\payment\cancel.html.py:7
+msgid "Subscription canceled"
+msgstr "Подписка отменена"
+
+#: .\payment\templates\payment\cancel.html.py:8
+msgid "Payment have been canceled."
+msgstr "Оплата отменена."
+
+#: .\payment\templates\payment\cancel.html.py:9
+msgid "You can always upgrade later from your personal account page."
+msgstr "Вы всегда сможете перейти на другой тариф со страницы своего аккаунта."
+
+#: .\payment\templates\payment\failure.txt.py:2
+msgid "Invalid transaction"
+msgstr "Транзакция недействительна"
+
+#: .\payment\templates\payment\failure.txt.py:3
+msgid ""
+"\n"
+"    <p>Sorry, we could not find your payment. If you actually made a "
+"payment, please\n"
+"        contact us at <a href=\"mailto:support@prestashop-sync.com"
+"\">support@prestashop-sync.com</a></p>\n"
+msgstr ""
+"\n"
+"                <p>К сожалению, мы не смогли идентифицировать платеж. Если "
+"вы на самом деле произвели оплату, пожалуйста, связитесь с нами по адресу <a "
+"href=\"mailto:support@prestashop-sync.com\">support@prestashop-sync.com</a></"
+"p>\n"
+
+#: .\payment\templates\payment\options.html.py:17
+msgid "Free sync plan"
+msgstr "Тариф Начальный"
+
+#: .\payment\templates\payment\options.html.py:18
+msgid ""
+"\n"
+"                <ul>\n"
+"                    <li><b>Email support is possible in this plan, but not "
+"guaranteed.</b>\n"
+"                    <br><br>We will most likely respond to any kind of error "
+"happened during\n"
+"                    any operation supported by the service, though we will "
+"not make any assumptions on\n"
+"                    how long will it take to fix the error.</li>\n"
+"                    <li>\n"
+"                        <b>Scheduled Syncs are not possible in this plan.</"
+"b>\n"
+"                        <br><br>The reason is that background sync requires\n"
+"                        additional processing resources that generate extra "
+"cost\n"
+"                        to the hosting provider.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        <b>Limited manual syncs - 30 free syncs.</b>\n"
+"                        <br><br>Manual syncs are limited due to the same "
+"reason as scheduled&nbsp;syncs -\n"
+"                        additional resources. 30 manual syncs we grant after "
+"registration\n"
+"                        should be more than enough to try the service and "
+"decide whether you want to\n"
+"                        use it or not.\n"
+"                        <br><br>Manual syncs with a CSV file are also "
+"limited by sync duration time,\n"
+"                        the maximum duration time for a free plan is <b>5 "
+"minutes</b>, which should\n"
+"                        be enough to sync up to 500 products, but this "
+"number can depend on your hosting\n"
+"                        speed.\n"
+"                    </li>\n"
+"                </ul>\n"
+"                <div class=\"alert\">You can upgrade to <b>business plan</b> "
+"at any time.</div>\n"
+"                "
+msgstr ""
+"\n"
+"                <ul>\n"
+"                    <li><b>Техническая поддержка по email возможна, но не "
+"гарантируется.</b>\n"
+"                    <br><br>Мы постараемся ответить на сообщение об ошибке, "
+"которая случилась при выполнении одной из предоставляемых сервисом операций, "
+"но мы не сможем сообщить точную дату исправления ошибки, если она будет "
+"связана именно с сервисом</li>\n"
+"                    <li>\n"
+"<b>Автоматические обновления не поддерживаются данным тарифом</b>\n"
+"<br><br>Причина ораничения заключается в том, что автоматические обновления "
+"требуют дополнительных вычислительных ресурсов, которые необходимо "
+"оплачивать отдельно хостинг-провайдеру.                    </li>\n"
+"                    <li>\n"
+"                        <b>Ограниченное количество ручных обновлений - до 30 "
+"обновлений</b>\n"
+"                        <br><br>Ручные обновления ограничены по той же "
+"причине, что и автоматические - потребности в дополнительных ресурсах. На "
+"наш взгляд, тридцати ручных обновлений                         должно быть "
+"более чем достаточно для принятия решения о неободимости перехода на другой "
+"тарифный план.                    <br><br>Ручные обновления с использованием "
+"CSV файлов также ограничены по времени выполнения, максимальное время "
+"выполнения обновления ограничено <b>5ю минутами</b>. Этого времени должно "
+"быть достаточно для сихронизации около 500 товаров, но точное число может "
+"колебаться в зависимости от скорости вашего хостинга.\n"
+"</li>\n"
+"                </ul>\n"
+"                <div class=\"alert\">Перейти на <b>бизнес тариф</b> можно в "
+"любое время.</div>\n"
+"                "
+
+#: .\payment\templates\payment\options.html.py:48
+msgid "Business sync plan"
+msgstr "Тариф Бизнес"
+
+#: .\payment\templates\payment\options.html.py:49
+msgid ""
+"\n"
+"                    <ul>\n"
+"                        <li><b>Full email support.</b>\n"
+"                            <br><br>We will help you to set up integration "
+"with the service\n"
+"                            in case something goes wrong with the set up "
+"described in the manual.\n"
+"                            We guarantee to respond within 1 business day to "
+"any problem you encoutered\n"
+"                            while performing the operations supported by the "
+"service.\n"
+"                            Fixing your problems will be prioritized in our "
+"schedule.\n"
+"                        </li>\n"
+"                        <li>\n"
+"                            <b>Unlimited Scheduled Syncs.</b>\n"
+"                            <br><br>You can set up any number of Scheduled "
+"Sync for\n"
+"                            your shops.\n"
+"                        </li>\n"
+"                        <li>\n"
+"                            <b>Unlimited manual syncs.</b>\n"
+"                            <br><br>You can perform any number of manual "
+"syncs at any time!\n"
+"                        </li>\n"
+"                    </ul>\n"
+"                "
+msgstr ""
+"\n"
+"                    <ul>\n"
+"                        <li><b>Полноценная техническая поддержка по email</"
+"b>\n"
+"                            <br><br>Мы поможем настроить интеграцию с "
+"сервисом\n"
+"                            в случае если что-то пойдет не так, или если "
+"инструкции в руководстве по установке окажутся недостаточно подробными.\n"
+" Мы также гарантируем, что срок ответа на письма составит не более одного "
+"рабочего дня по вопросам, связанным с функционированием сервиса. Решение "
+"проблем, возникших у вас во время использования сервиса, является наиболее "
+"приоритетным для службы технической поддержки.\n"
+"                        </li>\n"
+"                        <li>\n"
+"<b>Неограниченные автоматические обновления</b>\n"
+"<br><br>Неограниченное число автоматических обновлений для всех своих "
+"магазинов.                        </li>\n"
+"                        <li>\n"
+"<b>Неограниченные ручные обновления</b>\n"
+"<br><br>Можно выполнять неограниченное число ручных обновлений в любое "
+"время!                        </li>\n"
+"                    </ul>"
+
+#: .\payment\templates\payment\options.html.py:75 .\users\models.py:22
+msgid "Free"
+msgstr "Начальный"
+
+#: .\payment\templates\payment\options.html.py:78
+#: .\payment\templates\payment\options.html.py:100
+msgid "<strong>Limited</strong> Email Support"
+msgstr "<strong>Ограниченная</strong> email&nbsp;поддержка"
+
+#: .\payment\templates\payment\options.html.py:79
+msgid "<strong>No</strong> Scheduled Sync"
+msgstr "<strong>Отсутствие</strong> автоматического обновления"
+
+#: .\payment\templates\payment\options.html.py:80
+msgid "<strong>Limited</strong> Manual Sync"
+msgstr "<strong>Ограниченное количество</strong> ручных обновлений"
+
+#: .\payment\templates\payment\options.html.py:84
+#: .\payment\templates\payment\options.html.py:106
+#: .\payment\templates\payment\options.html.py:128
+msgid "per month"
+msgstr "в месяц"
+
+#: .\payment\templates\payment\options.html.py:87
+#: .\payment\templates\payment\options.html.py:108
+#: .\payment\templates\payment\options.html.py:130
+#: .\templates\users\login_ajax.html.py:15
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: .\payment\templates\payment\options.html.py:91
+#: .\payment\templates\payment\options.html.py:136
+msgid "detailed information"
+msgstr "подробная информация"
+
+#: .\payment\templates\payment\options.html.py:97 .\users\models.py:23
+msgid "Small business"
+msgstr "Малый бизнес"
+
+#: .\payment\templates\payment\options.html.py:101
+#: .\payment\templates\payment\options.html.py:123
+msgid "<strong>Full</strong> Scheduled Sync"
+msgstr "<strong>Неограниченные</strong> автоматические обновления"
+
+#: .\payment\templates\payment\options.html.py:102
+#: .\payment\templates\payment\options.html.py:124
+msgid "<strong>Unlimited</strong> Manual Sync"
+msgstr "<strong>Неограниченные</strong> ручные обновления"
+
+#: .\payment\templates\payment\options.html.py:110
+#: .\payment\templates\payment\options.html.py:132
+msgid "Upgrade"
+msgstr "Сменить тариф"
+
+#: .\payment\templates\payment\options.html.py:119 .\users\models.py:22
+msgid "Business"
+msgstr "Бизнес"
+
+#: .\payment\templates\payment\options.html.py:122
+msgid "<strong>Full</strong> Email Support"
+msgstr "<strong>Гарантированная</strong> email&nbsp;поддержка"
+
+#: .\payment\templates\payment\success.txt.py:2
+msgid "Payment success"
+msgstr "Оплата проведена успешно"
+
+#: .\payment\templates\payment\success.txt.py:3
+msgid ""
+"\n"
+"    <p>Thank you for your payment.\n"
+"        Your transaction has been completed, and a receipt for your purchase "
+"has been emailed to you.\n"
+"        You may log into your account at <a href=\"http://www.paypal.com"
+"\">paypal.com</a> to view details of this transaction.</p>\n"
+msgstr ""
+"\n"
+"        <p>Спасибо за оплату, вы должны получить квитанцию в ближайшее время "
+"по email.\n"
+"        Посмотреть детали тразакции вы сможете в своем аккаунте на сайте <a "
+"href=\"http://www.paypal.com\">paypal.com</a>.</p>\n"
+
+#: .\payment\templates\payment\success.txt.py:9
+msgid "Your business subscription is now active."
+msgstr "Бизнес тариф активирован."
+
+#: .\presta\forms.py:121
+msgid "All lines in the file are incorrect"
+msgstr ""
+
+#: .\presta\forms.py:131
+msgid "File contains bad value: "
+msgstr "Файл содержит некорректное значение: "
+
+#: .\presta\forms.py:133
+msgid "File contains negative values"
+msgstr "Файл содержит отрицательные числа"
+
+#: .\presta\forms.py:196 .\presta\forms.py:287 .\presta\models.py:31
+#: .\presta\models.py:54
+msgid "Shop URL"
+msgstr "URL магазина"
+
+#: .\presta\forms.py:197
+msgid "Prestashop url, like www.yourshop.com"
+msgstr "Адрес вашего интернет-магазина, например www.yourshop.ru"
+
+#: .\presta\forms.py:199 .\presta\models.py:56
+#: .\templates\partial\manage_shops.html.py:12
+msgid "Sync type"
+msgstr "Тип синхронизации"
+
+#: .\presta\forms.py:200
+msgid ""
+"Data synchronization type.<br/> Use<b>internal ids</b> of this site OR<br/"
+">other unique ids of your shop (like <b>EAN13</b>)"
+msgstr ""
+"Тип синхронизации данных.<br/> Использовать <b>внутренние ID</b> с этого "
+"сайта ИЛИ<br/>другие уникальные атрибуты (например <b>EAN13</b>)"
+
+#: .\presta\forms.py:254 .\templates\manual_en.html.py:193
+#: .\templates\manual_ru.html.py:190
+msgid "CSV Update File"
+msgstr "CSV файл для обновления"
+
+#: .\presta\forms.py:255
+msgid ""
+"File in comma-separated format like:<br/><pre>&lt;ID_PRODUCT&gt;,&lt;"
+"QUANTITY&gt;\n"
+"...</pre> Where &lt;ID_PRODUCT&gt; values is the values<br/>you receive "
+"after load data operation."
+msgstr ""
+"Файл следующего формата:<br/><pre>&lt;ID_PRODUCT&gt;,&lt;КОЛИЧЕСТВО&gt;\n"
+"...</pre> Где значения переменной &lt;ID_PRODUCT&gt; - это значения, "
+"получаемые<br/>после выполнения операции 'загрузить данные'."
+
+#: .\presta\forms.py:265 .\presta\tests.py:389
+msgid "This field is required."
+msgstr "Обязательное поле"
+
+#: .\presta\forms.py:303 .\presta\forms.py:334
+msgid "Shop with this name already exists"
+msgstr "Магазин с таким адресом уже существует"
+
+#: .\presta\forms.py:315
+msgid "Scheduled Updates"
+msgstr "Автоматическое обновление"
+
+#: .\presta\forms.py:355
+msgid "Product Name"
+msgstr "Название товара"
+
+#: .\presta\forms.py:357
+msgid "Category"
+msgstr "Категория"
+
+#: .\presta\forms.py:358
+msgid "Price"
+msgstr "Цена"
+
+#: .\presta\forms.py:359 .\templates\partial\products_table.html.py:11
+msgid "Quantity"
+msgstr "Количество"
+
+#: .\presta\forms.py:361
+msgid "Description"
+msgstr "Описание"
+
+#: .\presta\models.py:39 .\presta\models.py:205
+msgid "Every hour"
+msgstr "Раз в час"
+
+#: .\presta\models.py:39 .\presta\models.py:205
+msgid "Every day"
+msgstr "Раз в день"
+
+#: .\presta\models.py:39 .\presta\models.py:205
+msgid "Every week"
+msgstr "Раз в неделю"
+
+#: .\presta\models.py:41
+msgid "Based on Reference"
+msgstr "На основе Артикула"
+
+#: .\presta\models.py:42
+msgid "Based on Supplier Reference"
+msgstr "На основе Артикула Поставщика"
+
+#: .\presta\models.py:43
+msgid "Based on EAN13"
+msgstr "На основе кодов EAN13"
+
+#: .\presta\models.py:45
+msgid "Internal ID (Deprecated)"
+msgstr "Внутренний ID (Устарело)"
+
+#: .\presta\models.py:58 .\templates\partial\manage_shops.html.py:13
+msgid "Secret key"
+msgstr "Секретный ключ"
+
+#: .\presta\models.py:62 .\presta\models.py:207
+#: .\templates\manual_en.html.py:227 .\templates\manual_ru.html.py:221
+msgid "Update File URL"
+msgstr "URL файла обновлений"
+
+#: .\presta\models.py:64 .\presta\models.py:209
+msgid "Update interval"
+msgstr "Интервал обновления"
+
+#: .\presta\models.py:78
+msgid "Add products"
+msgstr "Добавить товары"
+
+#: .\presta\models.py:79
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\presta\models.py:80 .\templates\users\account.html.py:122
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\presta\tasks.py:65
+#, python-format
+msgid "Periodic update report for %s"
+msgstr "Отчет об автоматическом обновлении для %s"
+
+#: .\presta\tasks.py:79
+msgid "Scheduled update failure"
+msgstr "Ошибка автоматического обновления"
+
+#: .\presta\tasks.py:97
+#, python-format
+msgid "Update report for %s"
+msgstr "Отчет об обновлении товаров для %s"
+
+#: .\presta\tasks.py:104
+msgid "Time limit exceeded"
+msgstr "Превышено время выполнения"
+
+#: .\presta\tests.py:303 .\presta\tests.py:426 .\presta\views.py:154
+#: .\templates\partial\load_form.html.py:38
+msgid "File is valid"
+msgstr "Файл успешно загружен"
+
+#: .\presta\tests.py:314 .\presta\views.py:124
+#: .\templates\partial\shop_add_products.html.py:48
+msgid "Drag images here."
+msgstr "Перетащите изображения сюда."
+
+#: .\presta\tests.py:435 .\presta\views.py:65 .\presta\views.py:152
+msgid "File is not valid"
+msgstr "CSV файл не корректен"
+
+#: .\presta\views.py:159
+msgid "File is partially valid"
+msgstr "Файл частично корректен"
+
+#: .\presta\widgets.py:52
+msgid "show/hide password"
+msgstr "скрыть/показать пароль"
+
+#: .\presta\utils\presta_api.py:91
+msgid "Incorrect value"
+msgstr "Неверное значение"
+
+#: .\presta\utils\presta_api.py:154
+msgid ""
+"You have some problem with API access configuration,<br>try if API works by "
+"manually examining url:<br>"
+msgstr ""
+"Проблема с доступом к API,<br>попробуйте вручную открыть следующий URL:<br>"
+
+#: .\presta\utils\presta_api.py:212 .\presta\utils\presta_api.py:219
+msgid "NO CATEGORIES FOUND"
+msgstr "КАТЕГОРИИ НЕ НАЙДЕНЫ"
+
+#: .\presta\utils\presta_api.py:242 .\presta\utils\presta_api.py:262
+#: .\presta\utils\presta_api.py:473 .\presta\utils\presta_api.py:502
+msgid "DUMMY"
+msgstr ""
+
+#: .\templates\404.html.py:3
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: .\templates\404.html.py:7
+msgid "The page you requested could not be found"
+msgstr "Страница не найдена"
+
+#: .\templates\500.html.py:3
+msgid "Server error"
+msgstr "Что-то пошло не так..."
+
+#: .\templates\500.html.py:8
+msgid "Oops! An unexpected error has occurred"
+msgstr "Упс, что-то пошло не так"
+
+#: .\templates\500.html.py:9
+msgid "Our team has been notified and is working on fixing this problem"
+msgstr "Наша команда оповещена об ошибке и работает над решением проблемы."
+
+#: .\templates\500.html.py:13
+msgid "You can return to our"
+msgstr "Можете вернуться на"
+
+#: .\templates\500.html.py:13
+msgid "main page"
+msgstr "главную страницу"
+
+#: .\templates\about.html.py:4 .\templates\base.html.py:146
+msgid "About"
+msgstr "О проекте"
+
+#: .\templates\about.html.py:9
+msgid ""
+"\n"
+"            <strong>Prestashop-Sync Service</strong> is aimed to help "
+"merchants that use <a href=\"http://prestashop.com\" rel=\"nofollow"
+"\">Prestashop</a> platform in solving their everyday routines.<br/>\n"
+"            <br>\n"
+"            You can instantly evaluate all functionality and start using the "
+"service <strong>without need to register</strong>.<br>\n"
+"            <a href=\"/\">Start using it now</a> and tell us what we need to "
+"do to make your life easier!<br>\n"
+"            <br>\n"
+"            <strong>Prestashop-Sync Service</strong> provides following "
+"features at the moment:\n"
+"            <ul>\n"
+"                <li><strong>Bulk quantity update</strong> for all products "
+"in your shop. Either using <strong>Prestashop-Sync</strong> web interface or "
+"with CSV file.</li>\n"
+"                <li><strong>Update schedules</strong>. You can perform "
+"scheduled product quantity updates in your shop.\n"
+"                Just make update file available online somewhere, set up "
+"file location and time interval in the service and you're done.</li>\n"
+"                <li>Store and manage multiple shops.</li>\n"
+"            </ul>\n"
+"            Some features that we are currently working on and soon to "
+"release:\n"
+"            <ul>\n"
+"                <li><del>Create new products with images</del> (Done).</li>\n"
+"                <li>Ability to update any product attribute.</li>\n"
+"                <li>Ability to manage product images.</li>\n"
+"                <li>Bulk coupons import.</li>\n"
+"            </ul>\n"
+"            Have some annoying issue that you would like to solve? Please, "
+"contact us at <a href=\"mailto:admin@prestashop-sync.com\">admin@prestashop-"
+"sync.com</a>.\n"
+"        "
+msgstr ""
+"\n"
+"Сервис <strong>Prestashop-Sync Service</strong> создан чтобы помочь "
+"владельцам интернет-магазинов, использующих платформу <a href=\"http://"
+"prestashop.com\" rel=\"nofollow\">Prestashop</a>, в решении часто "
+"возникающих проблем.<br/><br>Сервисом можно начать пользоваться мгновенно, "
+"без какой-либо регистрации.<br>\n"
+"<a href=\"/\">Начните использовать его прямо сейчас</a> и скажите что нам "
+"ещё нужно сделать для облегчения вашей работы!<br>\n"
+"<br>\n"
+"На данный момент сервис <strong>Prestashop-Sync Service</strong> "
+"предоставляет следующий набор функций:<ul><li><strong>Массовое обновление</"
+"strong> количества товаров в интернет-магазине через веб-интерфейс сервиса "
+"или используя CSV файл.</li><li><strong>Обновление по расписанию</strong> - "
+"позволяет выполнять плановое обновление количества товаров в вашем магазине. "
+"Необходимо только сделать CSV файл обновлений доступным через интернет и "
+"задать его положение в интерфейсе сервиса.</li><li>Хранение и управление "
+"множеством магазинов одновременно.</li></ul>Задачи, над котороыми мы "
+"работаем в данный момент:<ul><li><del>Добавление новых товаров</del> "
+"(Сделано).</li><li>Возможность обновления любого атрибута товара, не только "
+"количества.</li><li>Удобная работа с изображениями товаров.</li><li>Массовый "
+"импорт купонов. (для работы с системами <strong>Groupon</strong> и др.)</"
+"li></ul>Есть проблема которую вы хотели бы решить? Пожалуйста, напишите нам "
+"на <a href=\"mailto:admin@prestashop-sync.com\">admin@prestashop-sync.com</"
+"a>."
+
+#: .\templates\base.html.py:118 .\templates\base.html.py:151
+#: .\templates\contacts.html.py:4
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\templates\base.html.py:119 .\templates\base.html.py:147
+msgid "Blog"
+msgstr "Блог"
+
+#: .\templates\base.html.py:121
+msgid "User Manual"
+msgstr "Руководство"
+
+#: .\templates\base.html.py:123
+msgid "My account"
+msgstr "Мой аккаунт"
+
+#: .\templates\base.html.py:125 .\templates\base.html.py:141
+msgid "Plans & pricing"
+msgstr "Тарифы"
+
+#: .\templates\base.html.py:139
+msgid "Product"
+msgstr "Сервис"
+
+#: .\templates\base.html.py:140
+msgid "Features"
+msgstr "Функционал"
+
+#: .\templates\base.html.py:142
+msgid "Manual"
+msgstr "Описание"
+
+#: .\templates\base.html.py:145
+msgid "Company"
+msgstr "Компания"
+
+#: .\templates\base.html.py:150
+msgid "Support"
+msgstr "Поддержка"
+
+#: .\templates\base.html.py:152
+msgid "Feedback"
+msgstr "Обратная связь"
+
+#: .\templates\base.html.py:155
+msgid "Legal"
+msgstr "Информация"
+
+#: .\templates\base.html.py:156
+msgid "Terms of service"
+msgstr "Условия использования"
+
+#: .\templates\base.html.py:157
+msgid "Privacy policy"
+msgstr "Конфиденциальность"
+
+#: .\templates\base.html.py:235
+msgid "Loading. Please wait..."
+msgstr "Загрузка. Подождите..."
+
+#: .\templates\base.html.py:240 .\templates\main.html.py:147
+msgid "Ok"
+msgstr "Ок"
+
+#: .\templates\contacts.html.py:9
+msgid ""
+"\n"
+"            <strong>Prestashop-Sync Service</strong> is maintained by a "
+"small team of developers focused\n"
+"            on building powerful e-commerce systems.<br>\n"
+"            If you wish to contact us, please write at <a href=\"mailto:"
+"admin@prestashop-sync.com\">admin@prestashop-sync.com</a> or use a "
+"<b>Contact Form</b> below:\n"
+"        "
+msgstr ""
+"\n"
+"Сервис <strong>Prestashop-Sync Service</strong> был создан и поддерживается "
+"небольшой командой разработчиков.<br>Мы сконцентрированы на построении "
+"мощных и удобных систем электронной коммерции.<br/><br/>Если вы хотите "
+"связаться с нами, напишите по адресу <a href=\"mailto:admin@prestashop-sync."
+"com\">admin@prestashop-sync.com</a> или <b>воспользуйтесь формой</b> ниже:"
+
+#: .\templates\contacts.html.py:19
+msgid "Send"
+msgstr "Отправить"
+
+#: .\templates\contacts.html.py:25
+msgid "Address"
+msgstr "Адрес"
+
+#: .\templates\contacts.html.py:28
+msgid "Fribourg"
+msgstr "Фрибург"
+
+#: .\templates\contacts.html.py:29
+msgid "Switzerland"
+msgstr "Швейцария"
+
+#: .\templates\main.html.py:11
+msgid "Close"
+msgstr "Закрыть"
+
+#: .\templates\main.html.py:25
+msgid "Save your time and nerves"
+msgstr "Ваше время - деньги"
+
+#: .\templates\main.html.py:27
+msgid ""
+"\n"
+"                    Our service allows to load all products from your shop "
+"and <strong>manage\n"
+"                    them</strong> from a one single list.<br>\n"
+"                    You can also perform <strong>bulk quantity updates</"
+"strong> from a CSV file\n"
+"                        generated by a custom CRM system.\n"
+"                    "
+msgstr ""
+"\n"
+" Наш сервис умеет загружать товары из вашего магазина и даёт возможность "
+"<strong>обновлять остатки товаров</strong> из единого списка.<br><br>\n"
+" Вы также можете производить <strong>массовое обновление</strong> товаров, "
+"используя CSV файл, созданный в CRM-системе (<strong>1С</strong> например).\n"
+"                    "
+
+#: .\templates\main.html.py:37
+msgid "Organize your shops"
+msgstr "Оперируйте списками"
+
+#: .\templates\main.html.py:39
+msgid ""
+"\n"
+"                    Need more than a one shop? Our service allows you to "
+"<strong>organize\n"
+"                    and manage</strong> them simultaneously.<br>\n"
+"                    You can even configure <strong>scheduled updates</"
+"strong> for all your\n"
+"                        products. Just follow <a href=\"#\">these "
+"instuctions</a> in the manual.\n"
+"                    "
+msgstr ""
+"\n"
+"Владеете более чем одним магазином? Наш сервис позволяет <strong>создать "
+"список и управлять</strong> всеми магазинами одновременно.<br><br>\n"
+" Вы даже можете настроить <strong>обновление товаров по расписанию</strong>. "
+"Для этого воспользуйтесь <a href=\"#\">инструкциями</a> из руководства "
+"пользователя.\n"
+"                    "
+
+#: .\templates\main.html.py:49
+msgid "Request new features"
+msgstr "Предлагайте функционал"
+
+#: .\templates\main.html.py:51
+msgid ""
+"\n"
+"                    We can't forsee every single piece of a useful "
+"functionality for you.\n"
+"                        So don't hesitate to <strong><a href=\"#\" class="
+"\"feedback\">write us a message</a></strong>\n"
+"                        if you found something that is worth "
+"implementation.\n"
+"                    "
+msgstr ""
+"\n"
+"Мы не можем предусмотреть все возможности, которые могут быть полезны при "
+"управлении магазином.\n"
+"Поэтому не стесняйтесь <strong><a href=\"#\" class=\"feedback\">написать "
+"нам</a></strong>, если вы обнаружили что-то заслуживающее внимания.\n"
+"                    "
+
+#: .\templates\main.html.py:64
+msgid "Load/Update data panel"
+msgstr "Панель загрузки/обновления товаров"
+
+#: .\templates\main.html.py:68
+#, python-format
+msgid ""
+"\n"
+"                        Configure your shop for use with <strong>Prestashop "
+"Sync service</strong>.\n"
+"                        We created a <strong>module</strong> for this."
+"<br><br>\n"
+"                        For setup instructions, please follow the <a href=\"%"
+"(manual_url)s\">setup manual</a>.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Установите модуль <strong>prestashopsync</strong>, "
+"производящий автоматическую настройку магазина для работы с сервисом "
+"<strong>Prestashop Sync</strong>.<br><br>\n"
+" Подробнее об установке модуля в <a href=\"%(manual_url)s\">Руководстве "
+"пользователя</a>.\n"
+"                    "
+
+#: .\templates\main.html.py:84
+msgid "Shop List"
+msgstr "Список магазинов"
+
+#: .\templates\main.html.py:88
+msgid ""
+"\n"
+"                        Add all your shops to the <strong>Shop List</"
+"strong>.\n"
+"                        Then you can easily load and manage products in the "
+"shops within just a\n"
+"                        few clicks.<br><br>\n"
+"                        Click on a shop title to load products for it.\n"
+"                    "
+msgstr ""
+"\n"
+"Добавьте все свои магазины в список слева.<br><br>\n"
+"После этого загрузка и обновление товаров в магазинах будут находиться в "
+"пределах пары кликов.<br><br>\n"
+"Нажмите на заголовок магазина чтобы загрузить товары из него.\n"
+"                    "
+
+#: .\templates\main.html.py:106 .\templates\manual_en.html.py:186
+#: .\templates\manual_ru.html.py:183
+msgid "Update"
+msgstr "Обновить"
+
+#: .\templates\main.html.py:111
+msgid "Shop Data"
+msgstr "Данные магазина"
+
+#: .\templates\main.html.py:120
+msgid "Do you wish to save"
+msgstr "Сохранить"
+
+#: .\templates\main.html.py:120
+msgid "to your shops?"
+msgstr "в список ваших магазинов?"
+
+#: .\templates\main.html.py:121
+msgid "Yes"
+msgstr "Да"
+
+#: .\templates\main.html.py:122
+msgid "No"
+msgstr "Нет"
+
+#: .\templates\main.html.py:125
+msgid ""
+"Data is being updated in the background. It may take a while depending on "
+"the CSV file size."
+msgstr ""
+"Данные обновляются в фоновом режиме. Это может занять некоторое время в "
+"зависимости от размера CSV файла."
+
+#: .\templates\main.html.py:126
+msgid "Please update your api.php file"
+msgstr "Пожалуйста обновите файл api.php"
+
+#: .\templates\main.html.py:127
+msgid ""
+"Your hosting provider blocks HTTP PUT requests or update is not allowed in "
+"Prestashop Web-Service permissions"
+msgstr ""
+"Хостинг-провайдер блокирует запросы типа HTTP PUT или необходимо разрешить "
+"обновление данных (Modify (PUT)) в настройках Prestashop Web Service"
+
+#: .\templates\main.html.py:129
+msgid ""
+"No products were created. Please check your web-service permissions and CSV "
+"file for errors."
+msgstr ""
+"Товары не были добавлены. Проверьте права доступа к веб-сервису и "
+"корректность CSV файла."
+
+#: .\templates\main.html.py:132
+msgid "Products were added. You may have to wait for images to be uploaded."
+msgstr ""
+"Товары добавлены в магазин. Загрузка картинок может потребовать нескольких "
+"минут."
+
+#: .\templates\main.html.py:135
+msgid ""
+"\n"
+"            Some of the products were not updated, because <strong>advanced "
+"stock management</strong> option is not supported\n"
+"            "
+msgstr ""
+"\n"
+"Некоторые товары не были обновлены, так как <strong>расширенная система "
+"управления запасами</strong> не поддерживается\n"
+"            "
+
+#: .\templates\main.html.py:139 .\templates\manual_en.html.py:194
+#: .\templates\partial\load_form.html.py:29
+msgid "Drag file here to upload and validate."
+msgstr "Перетащите файл сюда для загрузки."
+
+#: .\templates\main.html.py:140
+msgid "Sorry, the file is too big."
+msgstr "Файл слишком большой."
+
+#: .\templates\main.html.py:141
+msgid "Please register to add shops"
+msgstr "Зарегистрируйтесь чтобы добавить магазин"
+
+#: .\templates\main.html.py:142
+msgid "Please upgrade to a different plan to continue"
+msgstr "Пожалуйста, перейдите на другой тариф чтобы продолжить"
+
+#: .\templates\main.html.py:146
+msgid "Delete shop"
+msgstr "Удалить магазин"
+
+#: .\templates\main.html.py:148
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\templates\main.html.py:156
+msgid "Add Shop"
+msgstr "Добавить магазин"
+
+#: .\templates\main.html.py:159
+msgid "Add"
+msgstr "Добавить"
+
+#: .\templates\manual_en.html.py:174 .\templates\manual_en.html.py:177
+#: .\templates\manual_ru.html.py:171 .\templates\manual_ru.html.py:207
+#: .\templates\partial\load_form.html.py:46
+msgid "Get products data"
+msgstr "Получить список товаров"
+
+#: .\templates\manual_en.html.py:195 .\templates\manual_ru.html.py:191
+#: .\templates\partial\load_form.html.py:47
+msgid "Update prestashop data"
+msgstr "Обновить данные"
+
+#: .\templates\manual_en.html.py:209 .\templates\manual_ru.html.py:204
+#: .\templates\partial\manage_shops.html.py:27
+#: .\templates\partial\manage_shops.html.py:29
+msgid "Add shop"
+msgstr "Добавить магазин"
+
+#: .\templates\manual_en.html.py:255 .\templates\manual_ru.html.py:250
+#: .\templates\partial\shop_add_products.html.py:64
+msgid "Drag csv file for bulk upload here."
+msgstr "Перетащите CSV файл с товарами сюда."
+
+#: .\templates\mail\customers\csv_update_error.html.py:3
+#, python-format
+msgid ""
+"\n"
+"Our apologise,\n"
+"your recent periodic product update on Prestashop-Sync service has failed to "
+"complete successfully.\n"
+"CSV file contains the following errors:\n"
+"\n"
+"%(message|safe)s\n"
+"\n"
+"Sincerely,\n"
+"Prestashop-Sync Team.\n"
+msgstr ""
+"\n"
+"К сожалению,\n"
+"недавнее автоматическое обновление товаров через CSV файл на сервисе "
+"Prestashop-Sync service было завершено с ошибкой.\n"
+"CSV файл содержит следующие ошибки:\n"
+"%(message|safe)s\n"
+"\n"
+"С уважением,\n"
+"Команда Prestashop-Sync.\n"
+
+#: .\templates\mail\customers\time_limit_exceeded.html.py:3
+msgid ""
+"\n"
+"Our apologise,\n"
+"your recent CSV product update on Prestashop-Sync service has been "
+"terminated,\n"
+"because it exceeded 5 minutes time limit.\n"
+"\n"
+"Please consider switching to one of the business plans to be able to handle "
+"large files.\n"
+"\n"
+"Sincerely,\n"
+"Prestashop-Sync Team.\n"
+msgstr ""
+"\n"
+"К сожалению,\n"
+"недавняя синхронизация товаров на нашем сервисе Prestashop-Sync service была "
+"досрочно завершена,\n"
+"так как время ее выполнения превысило лимит в 5 минут.\n"
+"\n"
+"Пожалуйста, рассмотрите возможность переключения на один из бизнес тарифов, "
+"в которых отсутсвуют ограничения на время выполнения синхронизации.\n"
+"\n"
+"С уважением,\n"
+"Команда Prestashop-Sync.\n"
+
+#: .\templates\mail\customers\update_report.html.py:9
+msgid "Prestashop-Sync product update report."
+msgstr "Prestashop-Sync: отчет об обновлении товаров."
+
+#: .\templates\mail\customers\update_report.html.py:13
+msgid "No products were changed."
+msgstr "Изменений в товарах не обнаружено."
+
+#: .\templates\mail\customers\update_report.html.py:17
+msgid "Unfortunately, the following errors were encounered during the update:"
+msgstr "К сожалению, в процессе обновления возникли следующие проблемы:"
+
+#: .\templates\mail\customers\update_report.html.py:24
+msgid "Error"
+msgstr "Ошибка"
+
+#: .\templates\mail\customers\update_report.html.py:26
+msgid "Details"
+msgstr "Подробности"
+
+#: .\templates\partial\load_form.html.py:45
+msgid "Load demo-shop data"
+msgstr "Загрузить демо-данные"
+
+#: .\templates\partial\manage_shops.html.py:11
+#: .\templates\partial\products_table.html.py:9
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\templates\partial\manage_shops.html.py:14
+msgid "Status"
+msgstr "Статус"
+
+#: .\templates\partial\manage_shops.html.py:15
+msgid "Actions"
+msgstr "Действия"
+
+#: .\templates\partial\pagination.html.py:10
+msgid "Save data as CSV file"
+msgstr "Сохранить CSV-файл с данными"
+
+#: .\templates\partial\products_table.html.py:10
+msgid "Attributes"
+msgstr "Атрибуты"
+
+#: .\templates\partial\shop_add_products.html.py:6
+msgid "Images for"
+msgstr "Изображения для"
+
+#: .\templates\partial\shop_add_products.html.py:11
+msgid "Add Products for"
+msgstr "Добавить товары в"
+
+#: .\templates\partial\shop_add_products.html.py:43
+msgid "Images:"
+msgstr "Изображения:"
+
+#: .\templates\partial\shop_add_products.html.py:53
+msgid "Remove product"
+msgstr "Удалить товар"
+
+#: .\templates\partial\shop_add_products.html.py:53
+msgid "Remove"
+msgstr "Удалить"
+
+#: .\templates\partial\shop_add_products.html.py:59
+msgid "Add more"
+msgstr "Добавить ещё"
+
+#: .\templates\partial\shop_add_products.html.py:66
+msgid ""
+"Products in a following format: <br><pre>&amp;lt;TITLE&amp;gt;,&amp;lt;"
+"CATEGORY&amp;gt;,&amp;lt;PRICE>,&amp;lt;QUANTITY&amp;gt;,&amp;lt;"
+"DESCRIPTION&amp;gt;</pre>"
+msgstr ""
+"Список товаров в следующем формате: <br><pre>&amp;lt;TITLE&amp;gt;,&amp;lt;"
+"CATEGORY&amp;gt;,&amp;lt;PRICE>,&amp;lt;QUANTITY&amp;gt;,&amp;lt;"
+"DESCRIPTION&amp;gt;</pre>"
+
+#: .\templates\partial\shop_add_products.html.py:66
+msgid "More info on this"
+msgstr "Дополнительная информация"
+
+#: .\templates\partial\shop_add_products.html.py:71
+msgid "Submit"
+msgstr "Отправить"
+
+#: .\templates\partial\shop_edit.html.py:5
+msgid "Editing"
+msgstr "Редактирование"
+
+#: .\templates\partial\shop_edit.html.py:28
+msgid "Available in paid plans only."
+msgstr "Доступно в платных тарифах."
+
+#: .\templates\partial\shop_edit.html.py:65
+msgid "Save changes"
+msgstr "Сохранить"
+
+#: .\templates\partial\shop_row.html.py:6
+msgid "Go to "
+msgstr "Перейти на сайт "
+
+#: .\templates\partial\shop_row.html.py:20
+msgid "Update status"
+msgstr "Обновить статус"
+
+#: .\templates\partial\shop_row.html.py:21
+msgid "More..."
+msgstr "Подробнее..."
+
+#: .\templates\partial\headers\battery_left.html.py:7
+msgid "syncs left"
+msgstr "обновлений"
+
+#: .\templates\partial\headers\header.html.py:17
+msgid "Login/Signup"
+msgstr "Вход/Регистрация"
+
+#: .\templates\partial\headers\header.html.py:21
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\partial\headers\header.html.py:28
+msgid ""
+"\n"
+"                    <strong>Prestashop-Sync Service</strong> is aimed to "
+"help merchants that use <a href=\"http://prestashop.com\" rel=\"nofollow"
+"\">Prestashop</a> platform in solving their everyday routines.\n"
+"                "
+msgstr ""
+"\n"
+"Сервис <strong>Prestashop-Sync</strong> создан для помощи владельцам "
+"магазинов на платформе <a href=\"http://prestashop.com\" rel=\"nofollow"
+"\">Prestashop</a>, в решении часто возникающих задач.\n"
+"                    "
+
+#: .\templates\partial\headers\header.html.py:33
+msgid ""
+"\n"
+"                    Notice:\n"
+"                    Prestashop Sync Servive website is not the official "
+"PrestaShop site.\n"
+"                "
+msgstr ""
+"\n"
+"Сервис Prestashop Sync не является официальным сайтом PrestaShop."
+
+#: .\templates\partial\headers\user_data_panel.html.py:18
+msgid "upgrade"
+msgstr "сменить"
+
+#: .\templates\partial\headers\user_data_panel.html.py:19 .\users\models.py:20
+msgid "free plan"
+msgstr "начальный"
+
+#: .\templates\users\account.html.py:13
+msgid "Current plan:"
+msgstr "Текущий тариф:"
+
+#: .\templates\users\account.html.py:14
+msgid "Plan active until:"
+msgstr "Действителен до: "
+
+#: .\templates\users\account.html.py:24
+msgid "Unsubscribe"
+msgstr "Отключить подписку"
+
+#: .\templates\users\account.html.py:32
+msgid "You can always upgrade later from this page."
+msgstr "Вы всегда сможете перейти на другой тариф с этой же страницы."
+
+#: .\templates\users\account.html.py:38
+msgid "Business plan"
+msgstr "Бизнес-тариф"
+
+#: .\templates\users\account.html.py:39
+msgid "Small business plan"
+msgstr "Малый бизнес-тариф"
+
+#: .\templates\users\account.html.py:66 .\templates\users\account.html.py:86
+msgid "Total"
+msgstr "Сумма"
+
+#: .\templates\users\account.html.py:67
+msgid "3&euro; minumum, <b>-3&euro;/month discount</b> from 2nd month"
+msgstr "минимум 3&euro;, <b>скидка 3&euro;/месяц</b> со 2го месяца"
+
+#: .\templates\users\account.html.py:68 .\templates\users\account.html.py:87
+msgid "Duration"
+msgstr "Период"
+
+#: .\templates\users\account.html.py:82 .\templates\users\account.html.py:101
+msgid "Make a payment"
+msgstr "Совершить платеж"
+
+#: .\templates\users\account.html.py:105
+msgid "You can always unsubscribe later from this page."
+msgstr "Вы всегда сможете перейти на бесплатный тариф с этой же страницы."
+
+#: .\templates\users\account.html.py:115
+msgid "Account deletion"
+msgstr "Удаление аккаунта"
+
+#: .\templates\users\account.html.py:116
+msgid "Delete my account"
+msgstr "Удалить мой аккаунт"
+
+#: .\templates\users\account.html.py:121
+msgid "Delete account permanently?"
+msgstr "Удалить аккаунт навсегда?"
+
+#: .\templates\users\login.html.py:3 .\templates\users\login.html.py:15
+#: .\templates\users\login_ajax.html.py:21
+#: .\templates\users\login_ajax.html.py:26
+msgid "Login"
+msgstr "Вход"
+
+#: .\templates\users\login_ajax.html.py:6
+msgid "Login with"
+msgstr "Войти с помощью"
+
+#: .\templates\users\login_ajax.html.py:15
+msgid "New to prestashop-sync?"
+msgstr "Нет аккаунта?"
+
+#: .\templates\users\login_ajax.html.py:20
+#: .\templates\users\reset\password_reset.html.py:4
+#: .\templates\users\reset\password_reset_confirm.html.py:4
+msgid "Password reset"
+msgstr "Восстановление пароля"
+
+#: .\templates\users\login_ajax.html.py:26
+msgid "Already a member?"
+msgstr "Уже зарегистрированы?"
+
+#: .\templates\users\login_ajax.html.py:32
+#: .\templates\users\register_ajax.html.py:20
+#: .\templates\users\request_email.html.py:35
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\templates\users\register_ajax.html.py:6
+msgid "Register with"
+msgstr "Зарегистрироваться с помощью"
+
+#: .\templates\users\register_ajax.html.py:30
+#, python-format
+msgid ""
+"\n"
+"            By registering in <b>Prestashop-Sync service</b> you agree with "
+"our\n"
+"            <a href=\"%(termsurl)s\">Terms&nbsp;of&nbsp;service</a> & <a "
+"href=\"%(policyurl)s\">Privacy&nbsp;policy</a>\n"
+"        "
+msgstr ""
+"\n"
+"                        Регистрируясь в сервисе <b>Prestashop-Sync</b>, вы "
+"соглашаетесь с нашими\n"
+"                        <a href=\"%(termsurl)s\">Условиями&nbsp;"
+"использования</a> и <a href=\"%(policyurl)s\">Политикой&nbsp;"
+"конфиденциальности</a>\n"
+"                        "
+
+#: .\templates\users\request_email.html.py:30
+msgid "Please enter your email to complete registration"
+msgstr "Введите свой email для завершения регистрации"
+
+#: .\templates\users\reset\password_reset.html.py:11
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+"Забыли пароль? Введите свой адрес электронной почты ниже, и мы вышлем вам "
+"инструкцию, как установить новый пароль."
+
+#: .\templates\users\reset\password_reset.html.py:16
+msgid "Reset my password"
+msgstr "Восстановить мой пароль"
+
+#: .\templates\users\reset\password_reset_complete.html.py:4
+#: .\templates\users\reset\password_reset_complete.html.py:8
+msgid "Password reset complete"
+msgstr "Восстановление пароля завершено"
+
+#: .\templates\users\reset\password_reset_complete.html.py:9
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Ваш пароль был сохранен.  Теперь вы можете войти."
+
+#: .\templates\users\reset\password_reset_confirm.html.py:9
+msgid "Enter new password"
+msgstr "Введите новый пароль"
+
+#: .\templates\users\reset\password_reset_confirm.html.py:19
+msgid "Change my password"
+msgstr "Изменить мой пароль"
+
+#: .\templates\users\reset\password_reset_confirm.html.py:26
+msgid "Password reset unsuccessful"
+msgstr "Ошибка восстановления пароля"
+
+#: .\templates\users\reset\password_reset_confirm.html.py:27
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Неверная ссылка для восстановления пароля. Возможно, ей уже воспользовались. "
+"Пожалуйста, попробуйте восстановить пароль еще раз."
+
+#: .\templates\users\reset\password_reset_done.html.py:4
+#: .\templates\users\reset\password_reset_done.html.py:8
+msgid "Password reset successful"
+msgstr "Пароль успешно восстановлен"
+
+#: .\templates\users\reset\password_reset_done.html.py:9
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+"Мы отправили инструкцию по восстановлению пароля на адрес электронной почты, "
+"который вы указали. Вы должны ее вскоре получить."
+
+#: .\templates\users\reset\password_reset_email.html.py:4
+#, python-format
+msgid ""
+"You're receiving this e-mail because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+"Вы получили это письмо, потому что вы (или кто-то другой) запросили "
+"восстановление пароля от учётной записи на сайте %(site_name)s, которая "
+"связана с этим адресом электронной почты."
+
+#: .\templates\users\reset\password_reset_email.html.py:6
+msgid "Please go to the following page and choose a new password:"
+msgstr "Пожалуйста, перейдите на эту страницу и введите новый пароль:"
+
+#: .\templates\users\reset\password_reset_email.html.py:11
+msgid "Prestashop-Sync Team"
+msgstr "Команда Prestashop-Sync"
+
+#: .\tools\errors.py:12
+msgid "Please install api.php file"
+msgstr "Необходимо установить файл api.php"
+
+#: .\tools\errors.py:13
+msgid "Please regenerate .htaccess file"
+msgstr "Перегенерируйте файл .htaccess"
+
+#: .\tools\errors.py:14
+msgid "No products found"
+msgstr "Товары отсутствуют"
+
+#: .\tools\errors.py:15
+msgid "URL is not reachable"
+msgstr "адрес недоступен"
+
+#: .\tools\errors.py:16
+msgid "Please activate web-service"
+msgstr "Активируйте веб-сервис"
+
+#: .\tools\errors.py:17
+msgid "Enable product_option_values checkbox"
+msgstr "Установите галочку для product_option_values"
+
+#: .\tools\errors.py:18
+msgid "Enable combinations checkbox"
+msgstr "Установите галочку для combinations"
+
+#: .\tools\errors.py:28
+msgid "instructions"
+msgstr "инструкция"
+
+#: .\tools\forms.py:15
+msgid "Your email"
+msgstr "Контактный email"
+
+#: .\tools\forms.py:16
+msgid "Message"
+msgstr "Сообщение"
+
+#: .\tools\views.py:46
+msgid "We have received your message. Thank you!"
+msgstr "Мы получили ваше сообшение. Спасибо!"
+
+#: .\users\forms.py:14
+msgid "New password"
+msgstr "Новый пароль"
+
+#: .\users\forms.py:29
+msgid "Email"
+msgstr "Email"
+
+#: .\users\forms.py:30 .\users\forms.py:35
+msgid "Password"
+msgstr "Пароль"
+
+#: .\users\forms.py:37
+msgid "Plan"
+msgstr "Тариф"
+
+#: .\users\forms.py:49
+msgid "A user with this email already exists"
+msgstr "Пользователь с таким адресом уже существует"
+
+#: .\users\models.py:20
+msgid "business plan"
+msgstr "бизнес-тариф"
+
+#: .\users\models.py:21
+#, fuzzy
+msgid "small business plan"
+msgstr "бизнес-тариф"
+
+#: .\users\tests.py:33 .\users\views.py:140
+msgid "Welcome to Prestashop-Sync Service"
+msgstr "Добро пожаловать в сервис Prestashop-Sync"
+
+#: .\users\views.py:92
+msgid "User with this email already exists"
+msgstr "Пользователь с таким адресом уже существует"
+
+#: .\users\views.py:141
+msgid "Email with a confirmation link has been sent"
+msgstr "На ваш адрес было отправлено письмо с кодом активации аккаунта"
+
+#~ msgid "Data was successfully updated"
+#~ msgstr "Данные были успешно обновлены"
+
+#~ msgid "Business plan options"
+#~ msgstr "Подписка на бизнес тариф"
+
+#~ msgid ""
+#~ "\n"
+#~ "        By registering in <b>Prestashop-Sync service</b> you agree with "
+#~ "our\n"
+#~ "        <a href=\"%(termsurl)s\">Terms&nbsp;of&nbsp;service</a> & <a href="
+#~ "\"%(policyurl)s\">Privacy&nbsp;policy</a>\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "                        Регистрируясь в сервисе <b>Prestashop-Sync</b>, "
+#~ "вы соглашаетесь с нашими\n"
+#~ "                        <a href=\"%(termsurl)s\">Условиями&nbsp;"
+#~ "использования</a> и <a href=\"%(policyurl)s\">Политикой&nbsp;"
+#~ "конфиденциальности</a>\n"
+#~ "                        "
+
+#~ msgid "Incorrect file format"
+#~ msgstr "Неверный формат файла"
+
+#~ msgid "Main"
+#~ msgstr "Главная"
+
+#~ msgid "Password confirmation"
+#~ msgstr "Подтверждение пароля"
+
+#~ msgid "Password fields didn't match"
+#~ msgstr "Пароли не совпадают"
+
+#~ msgid "tell me more"
+#~ msgstr "подробнее"
+
+#~ msgid "Easily manage product quantities in your shops. All from one place"
+#~ msgstr "Управляйте всеми своими магазинами из одного места"
+
+#~ msgid "Manage shops"
+#~ msgstr "Магазины"
+
+#~ msgid "For more information, please read the"
+#~ msgstr "Подробное описание настройки сервиса можно найти в"
+
+#~ msgid "Show key"
+#~ msgstr "Показать"
+
+#~ msgid "Hide key"
+#~ msgstr "Спрятать"
+
+#~ msgid "Add your shops below"
+#~ msgstr "Добавьте свой магазин с помощью формы ниже"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Search"
+#~ msgstr "Поиск"
+
+#~ msgid "first name"
+#~ msgstr "Имя"
+
+#~ msgid "last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "e-mail address"
+#~ msgstr "email"
+
+#~ msgid "Enter a valid URL."
+#~ msgstr "значение не является URL-адресом"
+
+#~ msgid "This URL appears to be a broken link."
+#~ msgstr "данный URL-адрес не существует"
+
+#~ msgid "Version"
+#~ msgstr "Версия"
+
+#~ msgid "Set API secret key:"
+#~ msgstr "Установить секретный ключ:"
+
+#~ msgid "Set new key"
+#~ msgstr "Установить новый ключ"
+
+#~ msgid "The secret key is NOT STORED nor transferred anywhere."
+#~ msgstr ""
+#~ "Секретный ключ НЕ СОХРАНЯЕТСЯ на сайте и не передаётся третьим лицам."

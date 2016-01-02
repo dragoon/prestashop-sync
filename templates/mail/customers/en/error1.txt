@@ -1,0 +1,6 @@
+Hello,
+My name is Roman, and I am a developer of the Prestashop-Sync Web Service (http://prestashop-sync.com).
+We've noticed that you tried to use the service as the owner of the {{shop.domain}} shop. At the same time you experienced some errors using webservice, that we've been notified about.
+
+We would be pleased if you tell us whether you get the desired functionality or not. We will be glad to help you in solving your problems using the webservice.
+Thank you.

@@ -1,0 +1,9 @@
+{% load i18n %}
+<h2>{% trans "Payment success" %}</h2>
+{% blocktrans %}
+    <p>Thank you for your payment.
+        Your transaction has been completed, and a receipt for your purchase has been emailed to you.
+        You may log into your account at <a href="http://www.paypal.com">paypal.com</a> to view details of this transaction.</p>
+{% endblocktrans %}
+<br>
+<p>{% trans "Your business subscription is now active." %}</p>

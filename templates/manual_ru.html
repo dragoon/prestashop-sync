@@ -1,0 +1,336 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Руководство пользователя{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+    <div id="manual">
+        <h2>Руководство пользователя</h2>
+
+        <ul>
+            <li><a href="#">Описание сервиса</a></li>
+            <li>
+                <a href="#1.4">Настройка Prestashop 1.4</a>
+                <ul>
+                    <li><a href="#1.4module">Автоматическая настройка (рекомендуемый способ)</a></li>
+                    <li><a href="#1.4manual">Ручная настройка</a></li>
+                </ul>
+            </li>
+            <li><a href="#1.5">Настройка Prestashop 1.5</a>
+                <ul>
+                    <li><a href="#1.5module">Автоматическая настройка</a></li>
+                    <li><a href="#1.5manual">Ручная настройка</a></li>
+                    <li><a href="#1.5incorrect">"Неверное значение" для секретного ключа</a></li>
+                </ul>
+            </li>
+            <li><a href="#work">Работа с сервисом</a>
+                <ul>
+                    <li><a href="#get_data">Получение данных о товарах</a></li>
+                    <li><a href="#update_data">Обновление количества товара</a></li>
+                    <li><a href="#shop_list">Работа с магазинами</a>
+                        <ul>
+                            <li><a href="#shop_add">Добавление магазина</a></li>
+                            <li><a href="#shop_edit">Редактирование магазина</a></li>
+                            <li><a href="#shop_load">Загрузка данных из магазина</a></li>
+                            <li><a href="#shop_add_products">Добавление новых товаров в магазин</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#csv">Формат CSV файлов</a></li>
+        </ul>
+
+        <h3>Описание сервиса</h3>
+
+        <p>
+            Сервис <strong>Prestashop-sync</strong> позволяет легко обновлять количество товара в вашем интернет-магазине используя
+            CSV-файл или веб-интерфейс сервиса.
+            Для синхронизации количества товара в магазине каждый товар следует идентифицировать уникальным номером,
+            включая различные комбинации атрибутов для товара. Сервис поддерживает несколько вариантов идентификации:
+        </p>
+        <ul>
+            <li>Внутренние числовые идентификаторы (только для демонстрации).</li>
+            <li>Артикул</li>
+            <li>Артикул Поставщика</li>
+            <li>Уникальные штрих-коды <a href="http://ru.wikipedia.org/wiki/European_Article_Number">EAN13</a>. Перед
+                использованием
+                данного метода, значения кодов EAN13 должны быть установлены для каждого товара в магазине.
+            </li>
+        </ul>
+
+        <p>Если вы собираетесь использовать CSV-файл для обновления количества товара, а также генерировать этот файл
+            используя какую-либо внешнюю систему инвентаризации, например 1C, то рекомендуется использовать уникальную
+            идентификацию на основе кодов EAN13, как более надёжную и гарантирующую долговременную (бесконечную)
+            уникальность номеров.
+            Даже если у вашей продукции нет зарегистрированных кодов EAN13, вы можете придумать и внести их
+            самостоятельно.
+            Сервис поддерживает две стабильные версии платформы - Prestashop 1.3 и Prestashop 1.4.
+            Далее описываются необходимые действия по настройке вашего магазина для работы с веб-сервисом.
+            Обратите внимание, что настройки различаются для разных версий Prestashop.</p>
+
+        <h3 id="1.4">Prestashop 1.4</h3>
+        <h4 id="1.4module">Автоматическая настройка с помощью модуля prestashopsync</h4>
+        <p>Перейдите на вкладку <b>Модули</b> в админке магазина, затем нажмите кнопку
+            <b>Добавить модуль с моего компьютера</b> и скопируйте следующую строку в поле URL:
+            <a href="http://prestashop-sync.com/static/prestashopsync.zip">http://prestashop-sync.com/static/prestashopsync.zip</a>
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/module.png"><br><br>
+            После загрузки найдите модуль в списке <b>Администрирование</b> и нажмите <b>установить</b>:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/find_module.png"><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/configure_module.png"><br><br>
+            Настройте email адрес и пароль для входа в сервис:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/configure_module2.png">
+            <p class="info">После этого необходимо перегенерировать файл .htaccess, перейдя на вкладку
+            <strong>Tools &rArr; Generators</strong>, затем нажать на кнопку
+            <strong>"Генерировать .htaccess":</strong></p>
+            <img src="{{ STATIC_URL }}images/manual/ru/htaccess.png"><br><br>
+        </p>
+
+        <h4 id="1.4manual">Ручная настройка</h4>
+
+        <p>Prestashop версии 1.4 имеет собственный интерфейс для доступа к данным магазина, поэтому для начала работы его
+            необходимо сконфигурировать следующим образом:</p>
+        <ul>
+            <li>Зайти в <strong>Панель управления &rArr; Tools &rArr; Webservice</strong></li>
+            <li>Установить галочку <strong>Включить Webservice</strong> в разделе
+                <strong>Конфигурация</strong>, нажать <b>Сохранить</b>.
+            </li>
+            <li>
+                Добавить новый ключ для веб-сервиса, нажав кнопку <b>Добавить</b>.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/ru/initial_config.png"><br><br>
+            </li>
+            <li>Сгенерировать ключ, нажав кнопку <strong>Генерировать!</strong></li>
+            <li>Установить галочки рядом с полями: <strong>categories, combinations, configurations, images, product_feature_values, product_features, product_option_values, product_options, products</strong>,
+                <br>
+                Нажать <b>Сохранить</b>.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/ru/key_generate_config.png"><br><br>
+            </li>
+            <li><p class="info">После этого необходимо перегенерировать файл .htaccess, перейдя на вкладку
+                <strong>Tools &rArr; Generators</strong>, затем нажать на кнопку
+                <strong>"Генерировать .htaccess":</strong></p>
+                <img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/ru/htaccess.png"><br><br>
+            </li>
+            <li>
+                Проверьте правильность настроек, откройте URL: http://<strong>yourshop.ru</strong>/api/<br/>
+                Должен появиться запрос аутентификации. Введите сгенерированный <strong>ключ</strong> в поле имени пользователя, а поле пароля оставьте пустым.
+                (Если вы используете <strong>Internet Explorer</strong>, то необходимо ввести что-нибудь в поле пароля, так как данный браузер не разрешает пустые пароли).<br/>
+                Вы должны увидеть страницу с XML-данными как на следующем скриншоте:
+                <a href="{{ STATIC_URL }}images/prestashop_14_api.png">API Screenshot</a>
+            </li>
+            <li>Установить сгенерированный prestashop ключ в интерфейсе сервиса <strong>Prestashop-sync</strong></li>
+        </ul>
+        <h3 id="1.5">Prestashop 1.5</h3>
+        <p class="info">Сервис работает с платформой Prestashop 1.5 начиная с версии 1.5.1.</p>
+        <h4 id="1.5module">Автоматическая настройка с помощью модуля prestashopsync</h4>
+        <p>Скачайте <b>модуль Prestashop Sync</b> по следующей ссылке:
+            <a href="http://prestashop-sync.com/static/prestashopsync15.zip">http://prestashop-sync.com/static/prestashopsync15.zip</a>.
+            Затем перейдите на вкладку <b>Модули</b> в админке магазина и нажмите
+            кнопку <b>Добавиить новый модуль</b>, выберите скачанный архив и загрузите его:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/module15.png"><br><br>
+            После загрузки найдите модуль в списке <b>Администрирование</b> и нажмите <b>установить</b>:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/find_module15.png"><br>
+            <hr>
+            <img src="{{ STATIC_URL }}images/manual/ru/configure_module15.png"><br><br>
+            Настройте email адрес и пароль для входа в сервис:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/configure_module2.15.png">
+            <br>Нажмите <b>Установить интеграцию с Prestashop Sync</b>.
+            <br>После сообщения об успешном завершении интеграции можно входить в сервис.
+        </p>
+
+        <h4 id="1.5manual">Ручная настройка</h4>
+        <p><strong>Prestashop 1.5</strong> имеет собственный интерфейс для доступа к данным магазина, поэтому для начала работы его
+            необходимо сконфигурировать следующим образом:</p>
+        <ul>
+            <li>Зайти в <strong>Панель управления &rArr; Advanced Parameters &rArr; Webservice</strong></li>
+            <li>Установить флаг <strong>Включить Webservice</strong> в разделе
+                <strong>Конфигурация</strong>, нажать <b>Сохранить</b>.
+            </li>
+            <li>Добавить новый ключ для веб-сервиса, нажав кнопку <b>Добавить</b>.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/ru/initial_config15.png"><br><br>
+            </li>
+            <li>Сгенерировать ключ, нажав кнопку <strong>Генерировать!</strong></li>
+            <li>Установить галочки рядом с полями: <strong>categories, combinations, configurations, images, product_feature_values, product_features, product_option_values, product_options, products, stock_availables, stock_movement_reasons, stock_movements, stocks.</strong>
+                <br>
+                Нажать <b>Сохранить</b>.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/ru/key_generate_config15.png"><br><br>
+            </li>
+            <li>
+                Проверьте правильность настроек, откройте URL: http://<strong>yourshop.ru</strong>/api/<br/>
+                Должен появиться запрос аутентификации. Введите сгенерированный <strong>ключ</strong> в поле имени пользователя, а поле пароля оставьте пустым.
+                (Если вы используете <strong>Internet Explorer</strong>, то необходимо ввести что-нибудь в поле пароля, так как данный браузер не разрешает пустые пароли).<br/>
+                Вы должны увидеть страницу с XML-данными как на следующем скриншоте:
+                <a href="{{ STATIC_URL }}images/prestashop_14_api.png">API Screenshot</a>
+            </li>
+            <li>Установить сгенерированный prestashop ключ в интерфейсе сервиса <strong>Prestashop-sync</strong></li>
+        </ul>
+
+        <h4 id="1.5incorrect">"Неверное значение" для секретного ключа</h4>
+        <p>
+            Если вы настроили синхронизацию как описано выше, но сервис при этом отвечает
+            ошибкой вида <b>"неверное значение"</b> для поля секретного ключа,
+            то скорее всего это связано с особыми настройками вашего хостинга.
+            Однако, наиболее часто эта проблема связана со специфической настройкой модуля
+            rewrite веб-сервера Apache на вашем хостинге.
+            Чтобы исправить эту проблему, создайте файл с именем <b>.htaccess</b> внутри каталога
+            <b>webservice</b> в корне вашего сайта. Запишите в этот файл следующий код:
+            <pre class="code">
+    &lt;IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+    &lt;/IfModule></pre>
+        Теперь проверьте появился ли у вас доступ к API.
+        </p>
+
+        <h3 id="work">Работа с сервисом</h3>
+        <h3 id="get_data">Получение данных о товарах</h3>
+        <p>
+            Когда все настройки сделаны, можно загрузить товар из своего магазина. Для этого
+            необходимо правильно заполнить поля в первой верхней форме, как показано на скриншоте ниже:<br><br>
+            <img class="border" src="{{ STATIC_URL }}images/manual/ru/form1.png"><br><br>
+            Чтобы получить данные о товара в своем магазине, следует нажать на кнопку <b>{% trans "Get products data" %}</b>.
+        </p>
+        <p class="info">По умолчанию форма заполнена данными нашего тестового магазина, поэтому можно
+            нажать на кнопку получения данных и поэксперименторовать с данными тестового магазина.</p>
+        <h3 id="update_data">Обновление количества товара</h3>
+        <h4>Через интерфейс сервиса</h4>
+        <p>После получения данных о товарах, сервис перемещает страницу к таблице с полученными данными,
+            пример такой таблицы для тестового магазина показан на скриншоте ниже:<br><br>
+            <img class="border" src="{{ STATIC_URL }}images/manual/ru/data.png"><br><br>
+            В данной таблице представлены существующие в магазине товары вместе со всеми возможными комбинациями.<br>
+            Интерфейс постороен таким образом, что позволяет обновлять количество товара прямо из таблицы,
+            для этого необходимо ввести новое количество в поле, соответствующее обновляемому товару, а затем
+            нажать кнопку <b>{% trans "Update" %}</b>.<br><br>
+            Также возможно сохранение полученных данных в <a href="#csv">формате CSV-файла</a> для использования его в дальнейшем при обновлении
+            (подробнее об этом - ниже).
+        </p>
+        <h4>Через CSV-файл</h4>
+        <p>
+            Другой способ обновления количества товара - с использованием CSV-файла.<br>
+            Чтобы воспользоваться этим способом, необходимо загрузить файл в поле <b>{% trans "CSV Update File" %}</b>,
+            либо перетащить файл мышкой в соответствующую область в форме. Затем нажать на кнопку <b>{% trans "Update prestashop data" %}</b>.
+            В случае успешного обновление данных, сервис проинформирует об этом c помощью следующего сообщения:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/update_success.png">
+        </p>
+        <h3 id="shop_list">Работа с магазинами</h3>
+        <p>
+            Сервис <strong>Prestashop-Sync</strong> также позволяет сохранять настройки всех магазинов,
+            а затем переключаться между ними без необходимости повторного ввода данных.<br><br>
+            По умолчанию список магазинов содержит один наш тестовый магазин и выглядит так:<br><br>
+            <img class="border" src="{{ STATIC_URL }}images/manual/ru/shop_list.png">
+        </p>
+        <h4 id="shop_add">Добавление магазина</h4>
+        <p>
+            Для того, чтобы добавить новый магазин в список, можно воспользоваться кнопкой {% trans "Add shop" %},
+            которая откроет форму добавления магазина:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/add_shop.png"><br><br>
+            Либо можно сразу ввести параметры магазина в первую форму и нажать <b>{% trans "Get products data" %}</b>,
+            тогда вы увидите предложение сохранить магазин:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/shop_save.png">
+        </p>
+        <h4 id="shop_edit">Редактирование магазина</h4>
+        <p>
+            Редактирование сохраненного магазина осуществляется по нажатию на иконку
+            <span class="actions edit"></span>:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/shop_edit.png"><br><br>
+            Помимо изменения полей, заполненных при добавлении магазина, здесь также можно настроить
+            автоматическое обновление товаров. Автоматическое обновление работает следующим образом:
+        </p>
+        <ol>
+            <li>Вы размещаете где-либо доступный из интернета CSV-файл, содержащий обновления товаров</li>
+            <li>Вносите адрес файла в поле <b>{% trans "Update File URL" %}</b>, задаете желаемый
+                интервал обновления товаро и сохраняете изменения.</li>
+            <li>После этого количество и другие атрибуты товаров будут обновляться автоматически и регулярно
+            на основе данных из CSV-файла.</li>
+        </ol>
+        <h4 id="shop_load">Загрузка данных из магазина</h4>
+        <p>
+            Для загрузки данных из сохраненного магазина необходимо просто кликнуть по названию магазина
+            в списке:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/shop_load.png">
+        </p>
+        <h4 id="shop_add_products">Добавление новых товаров в магазин</h4>
+        <h4>Через интерфейс сервиса</h4>
+        <p>
+            Форма добавления товаров в магазин доступна по нажатию на иконку
+            <span class="actions add"></span>:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/add_products.png"><br><br>
+            Данные форма содержит только самые необходимые поля: наименование, категория,
+            цена, количество и описание. Для загрузки изображений товара следует перетащить картинки
+            внутрь размеченной области.<br><br>
+            После нажатия на кнопку <b>Отправить</b> появится диалог, подтверждающий успешное завершение операции:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/products_add_complete.png">
+        </p>
+        <h4 id="shop_add_products_csv">Через CSV файл</h4>
+        <p>
+            Форма добавления товаров через CSV файл также вызывается по нажатию на иконку плюса:
+            <span class="actions add"></span>:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/add_products_csv.png"><br><br>
+            Теперь, вместо заполнения полей как описано в предыдущей секции, следует перетащить <b>CSV файл</b>
+            в левый нижний прямоугольник с заголовком <b>"{% trans "Drag csv file for bulk upload here." %}"</b>.
+            Формат CSV файла описан в <a href="#add_csv">последней главе руководства</a>.
+            Кроме того, всегда можно получить подсказку о формате файле, просто подведя курсор
+            к знаку вопроса рядом с заголовком поля:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/ru/add_products_hint.png"><br><br>
+            После успешной загрузки CSV файла в форме появятся поля загрузки изображений для товаров из файла.
+            Первое загруженное изображение станет изображением по умолчанию для товара:
+            <br><br><img src="{{ STATIC_URL }}images/manual/ru/upload_product_images.png">
+        </p>
+        <p class="info">
+            Изображения товаров загружаются в фоновом режиме, поэтому они могут появиться в магазине
+            не мгновенно после добавления товаров, а постепенно по мере обработки.
+        </p>
+        <h3 id="csv">Формат CSV-файлов</h3>
+        <p>
+            CSV-файл - текстовый файл, значения которого разделены запятыми.
+            В следующих разделах приводится описание форматов CSV файлов, использующихся в сервисе
+            <strong>Prestashop Sync</strong>.
+        </p>
+        <p class="info">
+            Все CSV файлы должны иметь кодировку UTF-8.
+        </p>
+        <h4 id="update_csv">Формат CSV-файла обновления товаров</h4>
+        <p>
+            CSV файл обновления атрибутов товаров имеет следующий формат:
+        </p>
+    <pre class="code">
+
+    ID,QUANTITY[,PRICE]
+    ID,QUANTITY[,PRICE]
+    ...
+    </pre>
+        <p>
+            Где<br>
+            <strong>ID</strong> - уникальный идентификатор товара (EAN13, Артикул или Артикул поставщика),<br>
+            <strong>QUANTITY</strong> - количество товара,<br>
+            PRICE - новая цена товара.
+        </p>
+        <p class="info">
+            Атрибуты, находящиеся внутри квадратных скобок, являются необязательными.
+        </p>
+                <h4 id="add_csv">Формат CSV-файла добавления товаров</h4>
+        <p>
+            CSV файл добавления новых товаров имеет следующий формат:
+        </p>
+    <pre class="code">
+
+    TITLE,CATEGORY,PRICE,QUANTITY,DESCRIPTION
+    TITLE,CATEGORY,PRICE,QUANTITY,DESCRIPTION
+    ...
+    </pre>
+        <p>
+            Где<br>
+            <strong>TITLE</strong> - название товара,<br>
+            <strong>CATEGORY</strong> - категория товара, в текстовом види либо числовой ID,<br>
+            <strong>PRICE</strong> - цена товара,<br>
+            <strong>QUANTITY</strong> - количество товара,<br>
+            <strong>DESCRIPTION</strong> - описание товара, может быть пустым.<br>
+        </p>
+        <p>
+            <br>
+            Остались вопросы? Пожалуйста, напишите нам на
+            <a href="mailto:support@prestashop-sync.com">support@prestashop-sync.com</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}
+
+

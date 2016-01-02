@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+    <product>
+        <id_manufacturer xlink:href="http://localhost:8080/prestashop/api/manufacturers/1">1</id_manufacturer>
+        <id_supplier xlink:href="http://localhost:8080/prestashop/api/suppliers/1">1</id_supplier>
+        <id_category_default xlink:href="http://localhost:8080/prestashop/api/categories/1">1</id_category_default>
+        <out_of_stock><![CDATA[2]]></out_of_stock>
+        <new><![CDATA[]]></new>
+        <cache_default_attribute><![CDATA[0]]></cache_default_attribute>
+        <reference><![CDATA[]]></reference>
+        <supplier_reference><![CDATA[]]></supplier_reference>
+        <location><![CDATA[]]></location>
+        <ean13><![CDATA[1000000000001]]></ean13>
+        <upc><![CDATA[]]></upc>
+        <unity><![CDATA[]]></unity>
+
+        <id_tax_rules_group><![CDATA[0]]></id_tax_rules_group>
+        <id_color_default><![CDATA[0]]></id_color_default>
+        <minimal_quantity>1</minimal_quantity>
+        <price>1000</price>
+        <additional_shipping_cost><![CDATA[0.00]]></additional_shipping_cost>
+        <wholesale_price><![CDATA[0.000000]]></wholesale_price>
+        <on_sale><![CDATA[0]]></on_sale>
+        <online_only><![CDATA[0]]></online_only>
+        <ecotax><![CDATA[0.000000]]></ecotax>
+        <unit_price><![CDATA[]]></unit_price>
+        <width><![CDATA[0]]></width>
+        <height><![CDATA[0]]></height>
+        <depth><![CDATA[0]]></depth>
+        <weight><![CDATA[0]]></weight>
+        <quantity_discount><![CDATA[0]]></quantity_discount>
+        <customizable><![CDATA[0]]></customizable>
+
+        <uploadable_files><![CDATA[0]]></uploadable_files>
+        <text_fields><![CDATA[0]]></text_fields>
+        <active><![CDATA[1]]></active>
+        <available_for_order><![CDATA[1]]></available_for_order>
+        <condition><![CDATA[new]]></condition>
+        <show_price><![CDATA[1]]></show_price>
+        <indexed><![CDATA[0]]></indexed>
+        <cache_is_pack><![CDATA[0]]></cache_is_pack>
+        <cache_has_attachments><![CDATA[0]]></cache_has_attachments>
+        <quantity><![CDATA[250]]></quantity>
+        <meta_description>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6"><![CDATA[]]></language>
+        </meta_description>
+        <meta_keywords>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6"><![CDATA[]]></language>
+        </meta_keywords>
+        <meta_title>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6"><![CDATA[]]></language>
+        </meta_title>
+
+        <link_rewrite>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1">maclol</language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6">maclol</language>
+        </link_rewrite>
+        <name>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1">MacLOL</language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6">MacLOL</language>
+        </name>
+        <available_now>
+
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6"><![CDATA[]]></language>
+        </available_now>
+        <available_later>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6"><![CDATA[]]></language>
+        </available_later>
+        <description>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6">
+                <![CDATA[<p>Mackbook</p>]]></language>
+        </description>
+        <description_short>
+            <language id="1" xlink:href="http://localhost:8080/prestashop/api/languages/1"><![CDATA[]]></language>
+            <language id="2" xlink:href="http://localhost:8080/prestashop/api/languages/2"><![CDATA[]]></language>
+            <language id="3" xlink:href="http://localhost:8080/prestashop/api/languages/3"><![CDATA[]]></language>
+            <language id="4" xlink:href="http://localhost:8080/prestashop/api/languages/4"><![CDATA[]]></language>
+            <language id="5" xlink:href="http://localhost:8080/prestashop/api/languages/5"><![CDATA[]]></language>
+            <language id="6" xlink:href="http://localhost:8080/prestashop/api/languages/6">
+                <![CDATA[<p>Macbook</p>]]></language>
+        </description_short>
+        <associations>
+            <categories node_type="category">
+                <category xlink:href="http://localhost:8080/prestashop/api/categories/1">
+                    <id><![CDATA[1]]></id>
+                </category>
+                <category xlink:href="http://localhost:8080/prestashop/api/categories/4">
+                    <id><![CDATA[4]]></id>
+                </category>
+            </categories>
+        </associations>
+    </product>
+</prestashop>

@@ -1,0 +1,8 @@
+Hello Vincent,
+My name is Roman, I am working for the Prestashop-Sync Web Service (http://prestashop-sync.com).
+
+We've noticed that you tried to use the service as the owner of a shop based on PrestaShop platform.
+We've also been notified that you experienced some errors using the webservice and we are really sorry for that.
+
+Please, tell me whether you get the desired functionality or not. I will be glad to help you in solving your problems using the webservice.
+Thank you.

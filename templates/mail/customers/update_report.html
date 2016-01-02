@@ -1,0 +1,41 @@
+{% load i18n %}
+{% language language %}
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Prestashop-Sync Update Report</title>
+</head>
+<body>
+<h3>{% blocktrans %}Prestashop-Sync product update report.{% endblocktrans %}</h3>
+{% if count %}
+    {{ count }} products were updated.
+{% else %}
+{% blocktrans %}No products were changed.{% endblocktrans %}
+{% endif %}
+<br><br>
+{% if errors %}
+{% blocktrans %}Unfortunately, the following errors were encounered during the update:{% endblocktrans %}
+    <table width="100%" cellspacing="0" border="0">
+        <tbody>
+        <tr>
+            <th style="border-top:1px solid #accefa;color:#6c83a1;font-size:14px;background:#e2ecfb;text-align:left;padding:4px 2px;border-left:1px solid #accefa">
+                <b>{% trans "Product" context "update report" %}</b></th>
+            <th style="border-top:1px solid #accefa;color:#6c83a1;font-size:14px;background:#e2ecfb;text-align:left;padding:4px 2px;min-width: 170px;">
+                <b>{% trans "Error" %}</b></th>
+            <th style="border-top:1px solid #accefa;color:#6c83a1;font-size:14px;background:#e2ecfb;text-align:left;padding:4px 2px;border-right:1px solid #accefa">
+                <b>{% trans "Details" %}</b></th>
+        </tr>
+        {% for error in errors %}
+        <tr>
+            <td style="font-size:13px;border:1px solid #e2ecfb;padding:4px 2px;text-align: center;">
+                <b>{{ error.product }}{% if error.combination %}-{{ error.combination }}{% endif %}</b></td>
+            <td style="font-size:13px;padding:4px 2px;border:1px solid #e2ecfb;text-align: center;">{{ error.message }}</td>
+            <td style="font-size:13px;padding:4px 2px;border:1px solid #e2ecfb">{{ error.details }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+</body>
+</html>
+{% endlanguage %}

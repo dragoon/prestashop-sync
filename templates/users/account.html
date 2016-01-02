@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Account{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+        {% if messages %}
+            {% for message in messages %}
+                {{ message|safe }}
+            {% endfor %}
+            <br><br>
+        {% endif %}
+        <h2>{% trans "Current plan:" %} {{ request.user.plan_name }}</h2>
+        <h2>{% trans "Plan active until:" %}
+            {% if request.user.is_paid and not request.user.subscription %}
+                {{ request.user.plan_expiry }}
+            {% else %}
+                &infin;
+            {% endif %}
+        </h2>
+        {% if request.user.is_paid and request.user.subscription %}
+            <form class="payment">
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=7E9PGQQF3KBSG" class="btn btn-primary">
+                    {% trans "Unsubscribe" %}
+                </a>
+                <h2>from {{ request.user.plan_expiry|date:"j M Y" }}</h2>
+                <p>➙ <a href="http://www.paypal.com">paypal.com</a></p>
+                <!--<A HREF="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=G2H4LUNHLNH8J">
+                    <IMG SRC="https://www.sandbox.paypal.com/en_US/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
+                </A>-->
+                <br>
+                <p>{% trans "You can always upgrade later from this page." %}</p>
+            </form>
+        {% else %}
+            <br>
+            <h2>
+                <select class="main notice plan-select">
+                    <option {% if not small_business %}selected{% endif %}>{% trans "Business plan" %}</option>
+                    <option {% if small_business %}selected{% endif %}>{% trans "Small business plan" %}</option>
+                </select>
+            </h2>
+            {% spaceless %}
+                {% comment %}
+                <form action="{{ PAYPAL_URL }}" method="post" class="payment">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="{{ PAYPAL_BUTTON_ID }}">
+                    <button type="submit" class="btn btn-primary" name="submit">{% trans "Subscribe" %}</button>
+                    <h2>{{ request.user.next_payment_dates.0|date:"j M Y" }} - &infin;</h2>
+                </form>
+                <p>➙ <a href="http://www.paypal.com">paypal.com</a></p>
+                <br>{% endcomment %}
+                {% comment %}
+                <form action="{{ PAYPAL_URL }}" method="post" class="payment">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    {# sandbox: MPCXJXEVL5USA #}
+                    <input type="hidden" name="hosted_button_id" value="C3GS2EEPHRZFN">
+                    <button type="submit" class="btn btn-primary" name="submit">{% trans "Single payment" %}, 15€</button>
+                    <h2>{{ request.user.next_payment_dates.0|date:"j M Y" }} -
+                        {{ request.user.next_payment_dates.1|date:"j M Y" }}</h2>
+                </form>
+                {% endcomment %}
+                <form action="{{ PAYPAL_URL }}" method="post" class="payment standard-form business"
+                      {% if small_business %}style="display:none"{% endif %}>
+                    <h2>{% trans "Total" %}: <input class="main notice" type="number" value="15"> €</h2>
+                    <div class="error">{% trans "3&euro; minumum, <b>-3&euro;/month discount</b> from 2nd month" %}</div>
+                    <h2>{% trans "Duration" %}:
+                        <span class="start-date">{{ request.user.next_payment_dates.0|date:"j.m.Y" }}</span> -
+                        <span class="end-date">{{ request.user.next_payment_dates.1|date:"j.m.Y" }}</span></h2>
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="7E9PGQQF3KBSG">
+                    <input type="hidden" name="lc" value="CH">
+                    <input type="hidden" name="item_name" value="Prestashop-sync business">
+                    <input type="hidden" name="button_subtype" value="services">
+                    <input type="hidden" name="no_note" value="1">
+                    <input type="hidden" name="no_shipping" value="1">
+                    <input type="hidden" name="amount" value="15">
+                    <input type="hidden" name="currency_code" value="EUR">
+                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_LG.gif:NonHosted">
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="submit">{% trans "Make a payment" %}</button>
+                </form>
+                <form action="{{ PAYPAL_URL }}" method="post" class="payment standard-form business-small"
+                      {% if not small_business %}style="display:none"{% endif %}>
+                    <h2>{% trans "Total" %}: <input class="main notice" type="number" value="5"> €</h2>
+                    <h2>{% trans "Duration" %}:
+                        <span class="start-date">{{ request.user.next_payment_dates.0|date:"j.m.Y" }}</span> -
+                        <span class="end-date">{{ request.user.next_payment_dates.1|date:"j.m.Y" }}</span></h2>
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="7E9PGQQF3KBSG">
+                    <input type="hidden" name="lc" value="CH">
+                    <input type="hidden" name="item_name" value="Prestashop-sync small business">
+                    <input type="hidden" name="button_subtype" value="services">
+                    <input type="hidden" name="no_note" value="1">
+                    <input type="hidden" name="no_shipping" value="1">
+                    <input type="hidden" name="amount" value="5">
+                    <input type="hidden" name="currency_code" value="EUR">
+                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_LG.gif:NonHosted">
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="submit">{% trans "Make a payment" %}</button>
+                </form>
+                <p>➙ <a href="http://www.paypal.com">paypal.com</a></p>
+                <br>
+                <!--<p>{% trans "You can always unsubscribe later from this page." %}</p>-->
+            {% endspaceless %}
+            <br><br>
+            <div class="payment-logo paypal"></div>
+            <div class="payment-logo visa"></div>
+            <div class="payment-logo mastercard"></div>
+            <div class="payment-logo amex"></div>
+        {% endif %}
+        {% block account_specific %}
+            <br><br>
+            <h2>{% trans "Account deletion" %}</h2>
+            <a href="#delete_dialog" rel="facebox" class="btn btn-danger">{% trans "Delete my account" %}</a>
+            {#  START Add shop dialog #}
+            <div id="delete_dialog" class="hidden">
+                <form method="post" action="{% url account_delete %}" class="center-text-align">
+                    {% csrf_token %}
+                    <h2 class="maroon-small-heading">{% trans "Delete account permanently?" %}</h2>
+                    <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
+                </form>
+            </div>
+            {# END Add shop dialog #}
+        {% endblock %}
+    </div>
+
+{% endblock %}

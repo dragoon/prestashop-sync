@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="auth-form">
+    <div class="auth-form-panel left">
+        <div class="auth-form-panel-inner">
+            <form action="{% url loginza_login %}" method="get">
+                <span style="margin-top: 10px;">{% trans "Login with" %}:</span>
+                <iframe src="http://loginza.ru/api/widget?overlay=loginza&token_url=http://{{ request.get_host }}/loginza_login/&providers_set={% if LANGUAGE_CODE == "ru" %}vkontakte,facebook,google,yandex,mailruapi,twitter,rambler,lastfm{% else %}facebook,google,twitter,lastfm{% endif %}&lang={{ LANGUAGE_CODE }}"
+                        style="width:330px;height:190px;" scrolling="no" frameborder="no"></iframe>
+            </form>
+        </div>
+    </div>
+    <div class="auth-form-panel right">
+        <div class="auth-form-panel-inner">
+            <div class="login">
+                {% trans "New to prestashop-sync?" %} <a href="{% url pay_options %}">{% trans "Sign up" %}</a>
+                <form id="login_form" method="post" action="{% url login %}" class="standard-form login-form">
+                    {% csrf_token %}
+                    <ul>
+                        {{ login_form.as_ul }}
+                        <li><a href="{% url password_reset %}">{% trans "Password reset" %}</a></li>
+                        <li><input type="submit" class="link-button" value="{% trans "Login" %}"></li>
+                    </ul>
+                </form>
+            </div>
+            <div class="register">
+                {% trans "Already a member?" %} <a href="#" class="login">{% trans "Login" %}</a>
+                <form id="register_form" method="post" action="{% url register %}" class="standard-form login-form">
+                    {% csrf_token %}
+                    <ul>
+                        {{ register_form.as_ul }}
+                        <li class="right-text-align">
+                            <input type="submit" class="link-button" value="{% trans "Register" %}">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

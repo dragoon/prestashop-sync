@@ -1,0 +1,3 @@
+JavaScript error occured
+Message: {{ message|safe }}
+Line number: {{ line|safe }}

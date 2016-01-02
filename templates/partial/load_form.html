@@ -1,0 +1,49 @@
+{% load i18n %}
+<form id="load_data_form" data-update-url="{% url check_update %}" enctype="multipart/form-data" class="standard-form main" action="{% url update_data %}"
+      method="POST">
+    <ul>
+        {% for field in form %}
+            {% if field.html_name != "csv_file" and field.html_name != "key" %}
+                <li>
+                    <label for="{{ field.html_name }}">{{ field.label }}
+                        <sup><a class="help-link" title="{{ field.help_text }}" href="#">?</a></sup>:
+                    </label>
+                    {{ field }}
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% with form.key as field %}
+            <li class="key">
+                <label for="{{ field.html_name }}">{{ field.label }}:</label>
+                {{ field }}
+            </li>
+        {% endwith %}
+        {% with form.csv_file as field %}
+            <li>
+                <label for="{{ field.html_name }}">{{ field.label }}
+                    <sup><a class="help-link" title="{{ field.help_text }}" href="#">?</a></sup>:</label>
+                {% if not update_csv_file %}
+                {{ field }}
+                <div class="file-list"></div>
+                <div id="drop_zone" class="drop-zone" data-upload-url="{% url upload_update_csv %}" data-clear-url="{% url clear_update_csv %}">
+                    <div>{% trans "Drag file here to upload and validate." %}</div>
+                </div>
+                {% else %}
+                    <input style="display: none;" type="file" name="{{ field.html_name }}" id="id_{{ field.html_name }}" size="24">
+                    <div class="file-list">
+                        update_file.csv
+                        <a class="csv-action delete" href="#"></a>
+                    </div>
+                    <div id="drop_zone" class="drop-zone drop" data-upload-url="{% url upload_update_csv %}" data-clear-url="{% url clear_update_csv %}">
+                        <div>{% trans "File is valid" %}</div>
+                    </div>
+                {% endif %}
+            </li>
+        {% endwith %}
+    </ul>
+    <div id="main_buttons_wrapper">
+        <a {% if not form.is_demo_form %}style="display: none;"{% endif %} id="load_data_demo" href="{% url get_data %}" class="btn btn-primary">{% trans "Load demo-shop data" %}</a>
+        <a {% if form.is_demo_form %}style="display: none;"{% endif %} id="load_data" href="{% url get_data %}" class="btn btn-primary">{% trans "Get products data" %}</a>
+        <a class="btn btn-pink" id="update_data" href="#">{% trans "Update prestashop data" %}</a>
+    </div>
+</form>

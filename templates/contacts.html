@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Contacts" %}{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+    <div id="manual" style="line-height: 1.5em;">
+        {% blocktrans %}
+            <strong>Prestashop-Sync Service</strong> is maintained by a small team of developers focused
+            on building powerful e-commerce systems.<br>
+            If you wish to contact us, please write at <a href="mailto:admin@prestashop-sync.com">admin@prestashop-sync.com</a> or use a <b>Contact Form</b> below:
+        {% endblocktrans %}
+        <br><br>
+        <form action="" method="POST" class="standard-form contacts-form">
+            <ul>
+                {{ form.as_ul }}
+                <li>
+                    <input type="submit" class="link-button" value="{% trans "Send" %}">
+                </li>
+            </ul>
+        </form>
+        <br>
+    </div>
+    </div>
+{% endblock %}

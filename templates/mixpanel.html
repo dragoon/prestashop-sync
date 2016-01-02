@@ -1,0 +1,9 @@
+<script type="text/javascript">
+    $(function(){
+        {% if not user.is_guest %}
+        mixpanel.name_tag('{{ user.email }}');
+        {% endif %}
+    });
+    // track paypal submissions
+    //mixpanel.track_forms("form.payment", "paypal form submission");
+</script>

@@ -1,0 +1,44 @@
+{% load i18n %}
+<div id="header_container" class="{% block headerclass %}{% endblock %}">
+<div id="header_wrapper">
+    {% block logo %}
+        <a href="/" id="logo" title="Prestashop-Sync Service"></a>
+        <div id="ipad_image"></div>
+    {% endblock %}
+    <div id="language_panel">
+        {% for l in langs %}
+            <a title="{{ l.title }}" href="{% url change_lang l.lang %}?next={{ request.path }}">
+                {{ l.lang }}
+                <span class="{{ l.lang }}{% if l.lang == current_lang %} active{% endif %}"></span>
+            </a>
+        {% endfor %}
+    </div>
+    {% if request.user.is_guest %}
+        <a id="authentication" rel="facebox" href="{% url login_ajax %}">{% trans "Login/Signup" %}</a>
+    {% else %}
+        <div id="user_name_wrapper">
+            {% include "partial/headers/user_data_panel.html" %}
+            <a href="{% url logout %}">{% trans "Logout" %}</a>
+        </div>
+    {% endif %}
+    <div style="clear: both;"></div>
+    {% block headertext %}
+        <div id="header_text">
+            <p class="main-text">
+                {% blocktrans %}
+                    <strong>Prestashop-Sync Service</strong> is aimed to help merchants that use <a href="http://prestashop.com" rel="nofollow">Prestashop</a> platform in solving their everyday routines.
+                {% endblocktrans %}
+            </p>
+            <p class="emph">
+                {% blocktrans %}
+                    Notice:
+                    Prestashop Sync Servive website is not the official PrestaShop site.
+                {% endblocktrans %}
+            </p>
+            <a id="sync_btn" rel="facebox" href="{% url login_ajax %}">
+                <img src="{{ STATIC_URL }}images/transparent.png" height="55" width="283">
+            </a>
+        </div>
+    {% endblock %}
+</div>
+</div>

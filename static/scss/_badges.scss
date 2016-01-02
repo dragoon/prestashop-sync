@@ -1,0 +1,22 @@
+.label,
+.badge {
+  font-weight: bold;
+  line-height: 14px; // ensure proper line-height if floated
+  vertical-align: baseline;
+  white-space: nowrap;
+  background-color: #666;
+  text-decoration: none;
+}
+
+#nav a:hover .badge {
+  text-decoration: none;
+}
+
+.badge:hover {
+  text-decoration: none;
+}
+
+.badge {
+  padding: 2px 9px 1px;
+  @include border-radius(9px);
+}

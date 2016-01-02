@@ -1,0 +1,32 @@
+#projects
+site_settings.py
+.settings/*
+.project
+.pydevproject
+.cache/*
+.idea/*
+
+#temp files
+*.pyc
+*.pyo
+*.orig
+*.db
+*~
+
+#os files
+.DS_Store
+.htaccess
+Thumbs.db
+
+#build files
+build/
+MANIFEST
+dist/
+media/
+static/CACHE
+venv/
+.sass-cache/
+
+migrations/
+coverage/
+static/css/

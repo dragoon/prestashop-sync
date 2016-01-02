@@ -1,0 +1,143 @@
+{% load i18n %}
+{% load compress %}
+{% load active %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
+      xml:lang="{% firstof LANGUAGE_CODE 'en' %}"
+      lang="{% firstof LANGUAGE_CODE 'en' %}">
+<head>
+    <title>{% block full_title %}{% block title %}{% endblock %} - Prestashop Sync Service{% endblock %}</title>
+    <meta name="keywords" content="{% block meta-keywords %}prestashop, prestashop product manager, prestashop mass product changer{% endblock %}" />
+    <meta name="description" content="{% block meta-description %}PrestaShop Sync Service is a manager for your shops{% endblock %}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="image_src" type="image/png" href="{{ STATIC_URL }}images/express_logo.png" />
+    <script type="text/javascript">
+        window.onerror = function(message, url, lineNumber) {
+            message = message + '\n' + navigator.userAgent;
+            //$.post("{% url send_error %}", {message:message, line: lineNumber});
+            {% if request.user.is_superuser %}
+                $('#system_msg').html("<strong>Javascript Error: </strong>"+message);
+                $('#system_msg').show();
+                setTimeout(function(){
+                    $('#system_msg').hide();
+                }, 5000);
+            {% endif %}
+            return true;
+        };
+    </script>
+    {% compress css %}
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}libs/facebox/facebox.css"/>
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/articles.css"/>
+    <link type="text/css" media="screen, projection" rel="stylesheet" href="{{ STATIC_URL }}css/screen.css"/>
+    {% if auth %}
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="{{ STATIC_URL }}css/main_short.css"/>
+    {% endif %}
+    {% endcompress %}
+
+    {% block css %}
+    {% endblock %}
+
+    {% compress js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/jquery/jquery-min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/jquery/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/jquery/jquery_iphoneswitch.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/jquery/jquery.rotate.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/jquery/jquery.dragdrop.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}libs/facebox/facebox.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/base.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/login.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/shop_manage.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/dragdrop.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/payment.js"></script>
+    <script type="text/javascript">
+        $.facebox.settings.closeImage = '{{ STATIC_URL }}libs/facebox/faceboxClose.png';
+        $.facebox.settings.loadingImage = '{{ STATIC_URL }}libs/facebox/loading.gif';
+    </script>
+    {% endcompress %}
+
+    {% block extra-head %}{% endblock %}
+</head>
+
+<body>
+
+{# System message #}
+<div class="fixed" id="system_msg"></div>
+
+{% block header %}
+{% if auth %}
+    {% include "partial/headers/header_small.html" %}
+{% else %}
+    {% include "partial/headers/header.html" %}
+{% endif %}
+{% endblock %}
+
+{% block nav %}
+<ul id="nav">
+    <li><a class="{% active 'contacts' %}" href="{% url contacts %}">{% trans "Contacts" %}</a></li>
+    <li><a class="{% active 'articles_archive' %}" href="{% url articles_archive %}">{% trans "Blog" %}
+        {% if article_count %}<span class="badge">{{ article_count }}</span>{% endif %}</a></li>
+    <li><a class="" href="{{ manual_url }}">{% trans "User Manual" %}</a></li>
+{% if auth %}
+    <li><a class="{% active 'account' %}" href="{% url account %}">{% trans "My account" %}</a></li>
+{% else %}
+    <li><a class="{% active 'pay_options' %}" href="{% url pay_options %}">{% trans "Plans & pricing" %}</a></li>
+{% endif %}
+</ul>
+{% endblock %}
+<div style="clear: both;"></div>
+
+{% block extra-content %}{% endblock %}
+{% block content %}{% endblock %}
+
+{% block footer %}
+    <div id="footer">
+        <div id="footer_wrapper">
+            <img id="footer_logo" src="{{ STATIC_URL }}images/transparent.png" height="58" width="162">
+            <ul class="links">
+                <li>{% trans "Product" %}</li>
+                <li><a href="{% url about %}">{% trans "Features" %}</a></li>
+                <li><a href="{% url pay_options %}">{% trans "Plans & pricing" %}</a></li>
+                <li><a href="{{ manual_url }}">{% trans "Manual" %}</a></li>
+            </ul>
+            <ul class="links">
+                <li>{% trans "Company" %}</li>
+                <li><a href="{% url about %}">{% trans "About" %}</a></li>
+                <li><a href="{% url articles_archive %}">{% trans "Blog" %}</a></li>
+            </ul>
+            <ul class="links">
+                <li>{% trans "Support" %}</li>
+                <li><a href="{% url contacts %}">{% trans "Contacts" %}</a></li>
+                <li><a href="#" class="feedback">{% trans "Feedback" %}</a></li>
+            </ul>
+            <ul class="links">
+                <li>{% trans "Legal" %}</li>
+                <li><a href="{% url terms %}">{% trans "Terms of service" %}</a></li>
+                <li><a href="{% url policy %}">{% trans "Privacy policy" %}</a></li>
+            </ul>
+    <div id="copy">&copy;2010 - {% now "Y" %} Faraway Technologies</div>
+    <div id="version">version 3.8.14 (11 Mar 2014)</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block dialogs %}
+
+<div id="loading_dialog" style="display: none;">
+    <div class="loading-image">{% trans "Loading. Please wait..." %}</div>
+</div>
+
+<div id="ok_dialog" style="display: none;">
+    <div style="margin-bottom: 5px;">PLACEHOLDER</div>
+    <span class="facebox-close link-button small">{% trans "Ok" %}</span>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

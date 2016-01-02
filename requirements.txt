@@ -1,0 +1,18 @@
+Django>=1.4
+textile>=2.1.5
+lxml>=2.3.3
+# MySQLdb>=1.2.2
+BeautifulSoup>=3.2.0
+celery>=2.4.6
+django-celery>=2.4.2
+kombu>=1.5.1
+django-kombu>=0.9.4
+django-localeurl>=1.5
+setuptools>=0.6c11
+django-memcached2>=0.1
+django-coverage>=1.2.2
+django-compressor>=1.1.2
+python-memcached
+south>=0.7.6
+requests
+git+git://github.com/dcramer/django-paypal.git#egg=django-paypal

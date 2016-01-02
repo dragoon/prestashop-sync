@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}User Manual{% endblock %}
+
+{% block content %}
+    <div class="main-form-container manual">
+    <div id="manual">
+        <h2>User Manual</h2>
+
+        <ul>
+            <li><a href="#">Service description</a></li>
+            <li>
+                <a href="#1.4">Prestashop 1.4 setup</a>
+                <ul>
+                    <li><a href="#1.4module">Automatic setup (recommended)</a></li>
+                    <li><a href="#1.4manual">Manual setup</a></li>
+                </ul>
+            </li>
+            <li><a href="#1.5">Prestashop 1.5 setup</a>
+                <ul>
+                    <li><a href="#1.5module">Automatic setup (recommended)</a></li>
+                    <li><a href="#1.5manual">Manual setup</a></li>
+                    <li><a href="#1.5incorrect">Incorrect value for secret error</a></li>
+                </ul>
+            </li>
+            <li><a href="#work">Working with the service</a>
+                <ul>
+                    <li><a href="#get_data">Get products data</a></li>
+                    <li><a href="#update_data">Update products data</a></li>
+                    <li><a href="#shop_list">Working with a shop list</a>
+                        <ul>
+                            <li><a href="#shop_add">Adding a shop</a></li>
+                            <li><a href="#shop_edit">Editing a shop</a></li>
+                            <li><a href="#shop_load">Loading shop products data</a></li>
+                            <li><a href="#shop_add_products">Adding new products to the shop</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#csv">CSV files</a></li>
+        </ul>
+
+        <h3>Service description</h3>
+
+        <p>
+            <strong>Prestashop-sync</strong> service allows you to easily update product quantity in your shop using either CSV file or
+            service web-interface.
+            To synchronize product quantity in your shop each product should should be associated with a unique ID,
+            including different product combinations. <strong>Prestashop-sync</strong> service provides several options
+            to do this:
+        </p>
+        <ul>
+            <li>Internal numerical IDs (<strong>Only for demo purposes, please do not use</strong>)
+            </li>
+            <li><strong>Product Reference</strong></li>
+            <li><strong>Product Supplier Reference</strong></li>
+            <li><a href="http://en.wikipedia.org/wiki/European_Article_Number">EAN-13 barcodes</a>.
+                Before using these barcodes you need to assign them to every product in your shop,
+                including product combinations.
+            </li>
+        </ul>
+
+        <p>If you are going to use CSV file to perform product quantity updates and use external inventory system
+            to generate this CSV file, then it is recommended to use unique indentification based on <strong>EAN13</strong> barcodes,
+            because they are more reliable and guaranteeing long-term (eternal) uniqueness of IDs.
+            Even if products in your shop do not have registered EAN13-barcodes,
+            you can invent some unique 13-digit numbers by yourself.
+        </p>
+        <p>
+            <strong>Prestashop-sync</strong> service supports both Prestashop 1.3 and 1.4 versions.
+            Neccessary procedures to configure your shop for use with <strong>Prestashop-sync</strong>
+            web-service are described below. Please notice that configuration is different for different
+            <strong>Prestashop</strong> versions.
+        </p>
+
+        <h3 id="1.4">Prestashop 1.4</h3>
+        <h4 id="1.4module">Automatic setup using prestashopsync module</h4>
+        <p>Go to the <b>Modules</b> tab in the shop back office interface, then press
+            <b>Add a module for my computer</b> and paste the following link in the url:
+            <a href="http://prestashop-sync.com/static/prestashopsync.zip">http://prestashop-sync.com/static/prestashopsync.zip</a>
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/module.png"><br><br>
+            Then find a module under the <b>Administration</b> list and press <b>Install</b>:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/find_module.png"><br>
+            <img src="{{ STATIC_URL }}images/manual/en/configure_module.png"><br><br>
+            Configure email and password for service access:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/configure_module2.png">
+            <p class="info">Then you need to re-generate the .htaccess file, by navigating to
+            <strong>Tools &rArr; Generators</strong>, then press the
+            <strong>"generate .htaccess file"</strong> button:</p>
+            <img src="{{ STATIC_URL }}images/manual/en/htaccess.png"><br><br>
+        </p>
+
+        <h4 id="1.4manual">Manual setup</h4>
+        <p><strong>Prestashop 1.4</strong> has its own API interface to access shop data, so you need to
+            configure Prestashop as follows to start using it:</p>
+        <ul>
+            <li>Go to <strong>Back Office panel</strong> &rArr; <strong>Tools</strong> &rArr; <strong>Webservice</strong>.</li>
+            <li>Choose Yes radio-button for <strong>Enable PrestaShop Webservice</strong> in
+                <strong>Configuration</strong> section, then click <b>Save settings</b>.
+            </li>
+            <li>Add new web-service key by clicking on <b>Add new</b> link.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/en/initial_config.png"><br><br>
+            </li>
+            <li>Press <strong>Generate button</strong> to generate secret key</li>
+            <li>Set checkboxes next to following fields: <strong>categories, combinations, images, product_feature_values, product_features, product_option_values, product_options, products</strong>;
+                <br><strong>configurations - allow "View (GET)" only</strong>,
+                <br>
+                press <strong>Save</strong>.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/en/key_generate_config.png"><br><br>
+            </li>
+            <li><p class="info">Then you need to re-generate the .htaccess file, by navigating to
+                <strong>Tools &rArr; Generators</strong>, then press the
+                <strong>"generate .htaccess file"</strong> button:</p>
+                <img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/en/htaccess.png"><br><br>
+            </li>
+            <li>
+                Verify your configration by navigating to url: http://<strong>yourshop.com</strong>/api/<br/>
+                You should see authorization request. Enter your <strong>key</strong> to the username field and leave the password field empty
+                (<strong>Internet Explorer</strong> does not allow empty passwords, so just type something in it to make it work).<br/>
+                You should see XML-data like on the screenshot below:
+                <a href="{{ STATIC_URL }}images/prestashop_14_api.png">API Screenshot</a>
+            </li>
+            <li>Set generated key in the <strong>Prestashop-sync</strong> web-service interface</li>
+        </ul>
+        <h3 id="1.5">Prestashop 1.5</h3>
+        <p class="info">The service works with Prestashop 1.5 starting from version 1.5.1.</p>
+        <h4 id="1.5module">Automatic setup using prestashopsync module</h4>
+        <p>Download <b>Prestashop Sync module</b> from the following link:
+            <a href="http://prestashop-sync.com/static/prestashopsync15.zip">http://prestashop-sync.com/static/prestashopsync15.zip</a>.
+            Then go to the <b>Modules</b> tab in the back office interface, press
+            <b>Add new module</b> button, choose downloaded archive and upload it:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/module15.png"><br><br>
+            Then find a module under the <b>Administration</b> list and press <b>Install</b>:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/find_module15.png"><br>
+            <img src="{{ STATIC_URL }}images/manual/en/configure_module15.png"><br><br>
+            Configure email and password for service access:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/configure_module2.15.png">
+            <br>Press <b>Install prestashop-sync integration</b>.
+            <br>Login to the service!
+        </p>
+
+        <h4 id="1.5manual">Manual setup</h4>
+        <p><strong>Prestashop 1.5</strong> has an API interface to access the shop data, so you need to
+            configure Prestashop as follows to start using it:</p>
+        <ul>
+            <li>Go to <strong>Back office</strong> &rArr; <strong>Advanced Parameters</strong> &rArr; <strong>Webservice</strong>.</li>
+            <li>Set Yes radio-button for <strong>Enable PrestaShop Webservice</strong> in
+                <strong>Configuration</strong> section, then click <b>Save settings</b>.
+            </li>
+            <li>Add new web-service key by clicking on <b>Add new</b> button.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/en/initial_config15.png"><br><br>
+            </li>
+            <li>Press <strong>Generate button</strong> to generate secret key</li>
+            <li>Set checkboxes next to following fields: <strong>categories, combinations, configurations, images, product_feature_values, product_features, product_option_values, product_options, products, stock_availables, stock_movement_reasons, stock_movements, stocks.</strong>
+                <br>
+                Press <strong>Save</strong>.
+                <br><br><img style="margin-left: -1em;" src="{{ STATIC_URL }}images/manual/en/key_generate_config15.png"><br><br>
+            </li>
+            <li>
+                Verify your configration by navigating to url: http://<strong>yourshop.com</strong>/api/<br/>
+                You should see authorization request. Enter your <strong>key</strong> to the username field and leave the password field empty
+                (<strong>Internet Explorer</strong> does not allow empty passwords, so just type something in it to make it work).<br/>
+                You should see XML-data like on the screenshot below:
+                <a href="{{ STATIC_URL }}images/prestashop_14_api.png">API Screenshot</a>
+            </li>
+            <li>Set generated key in the <strong>Prestashop-sync</strong> web-service interface.</li>
+        </ul>
+        <h4 id="1.5incorrect">Incorrect value for secret key error</h4>
+        <p>
+            If you did everything as written above and the service keeps responding to you with the
+            <b>Incorrect value</b> error, neither can you log in to the <b>/api</b> through a browser,
+            there might be some issue with your hosting configuration.
+            However, often it is a configuration issue with the Apache rewrite module on your server
+            that prevents shop from behaving correctly.
+            To mitigate this issue, you need to create a file named <b>.htaccess</b> in the
+            <b>webservice</b> directory of your website root. Inside the file, paste the following code:
+            <pre class="code">
+    &lt;IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+    &lt;/IfModule></pre>
+        Now check if you can access the API.
+        </p>
+
+        <h3 id="work">Working with the service</h3>
+        <h3 id="get_data">Get products data</h3>
+        <p>
+            When configuration is finished, you can load products data from your shop. To do this,
+            you should correctly fill the fieds in the first top form, as shown on the screenshot below:<br><br>
+            <img class="border" src="{{ STATIC_URL }}images/manual/en/form1.png"><br><br>
+            Finally, to get products data, press <b>{% trans "Get products data" %}</b> button.
+        </p>
+        <p class="info">The form is filled with our test shop data by default, thus you can simply press
+            <b>{% trans "Get products data" %}</b> button and play with our test shop.</p>
+        <h3 id="update_data">Update products data</h3>
+        <h4>Using the service interface</h4>
+        <p>After getting products data, the service interface will move page to the product data table,
+            an example of such table for our test shop is shown on the screenshot below:<br><br>
+            <img class="border" src="{{ STATIC_URL }}images/manual/en/data.png"><br><br>
+            In this table you can see all existing product along with the all possible combinations.<br>
+            The interface is built such way that you can update every product quantity directly from the table,
+            just type in the new quantity in the field near to the desired product,
+            and then press <b>{% trans "Update" %}</b> button.<br><br>
+            It is also possble to save the product data in a <a href="#update_csv">CSV file format</a> for the later use
+            in the bulk update. (more on this below).
+        </p>
+        <h4>Using CSV file</h4>
+        <p>
+            Another way to update product quantity (and other attributes) is through a CSV file.<br>
+            First, you should eiter select a file in the <b>{% trans "CSV Update File" %}</b> field,
+            eiter drag'n'drop file to the special form region marked as <b>{% trans "Drag file here to upload and validate." %}</b>
+            Then click on the <b>{% trans "Update prestashop data" %}</b> button.
+            In case of successful producs data update, the service will inform you with the following message:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/update_success.png">
+        </p>
+        <h3 id="shop_list">Working with a shop list</h3>
+        <p>
+            <strong>Prestashop-Sync</strong> service also allows to save all your shop configurations,
+            and then switch between them seamlessly withour need to re-enter settings.<br><br>
+            The shop list by default contains a single test shop -
+            <a href="http://presta-test.com">presta-test.com</a>, and it looks like this:<br><br>
+            <img class="border" src="{{ STATIC_URL }}images/manual/en/shop_list.png">
+        </p>
+        <h4 id="shop_add">Adding a shop</h4>
+        <p>
+            To add a new shop to the list, you can use {% trans "Add shop" %} button at the bottom of the list panel,
+            and this button will open a shop adding form:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/add_shop.png"><br><br>
+            Or you can first load shop data using <b>Shop Load Form</b> and on successful load you will
+            see a suggestion to save the shop:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/shop_save.png">
+        </p>
+        <h4 id="shop_edit">Editing a shop</h4>
+        <p>
+            You can edit a saved shop by pressing the following icon in the shop actions column
+            <span class="actions edit"></span>:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/shop_edit.png"><br><br>
+            Besides changing fields that were filled when the shop was added, here you can also set up
+            automatic product updates. Automatic updates work in following way:
+        </p>
+        <ol>
+            <li>You place CSV file available somewhere in the internet.
+                This CSV-file should contain desired product updates</li>
+            <li>Then type in the CSV file addess in the<b>{% trans "Update File URL" %}</b> file,
+                set the desired update interval and save the changes.</li>
+            <li>After the above actions completed, you will have products quantity and other attributes
+                updated automaticate at regular intervals based on data from your CSV file.</li>
+        </ol>
+        <h4 id="shop_load">Loading shop products data</h4>
+        <p>
+            To load products data from a saved shop you should just click the shop title:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/shop_load.png">
+        </p>
+        <h4 id="shop_add_products">Adding new products to the shop</h4>
+        <h4>Using the service interface</h4>
+        <p>
+            Adding products to the shop is done by pressing the following icon in the shop actions column
+            <span class="actions add"></span>:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/add_products.png"><br><br>
+            <b>Add products form</b> has only the most important fields: title, category,
+            price, quantity and description. To load product images you should drag them inside
+            specially marked area.<br>
+            After pressing <b>submit</b> button you will receive confirmation that all products were added:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/products_add_complete.png">
+        </p>
+        <h4 id="shop_add_products_csv">Using CSV File</h4>
+        <p>
+            To add products using CSV file, first click the same icon in the shop actions column
+            <span class="actions add"></span>:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/add_products_csv.png"><br><br>
+            Then, istead of filling data in the fields, just drop your <b>CSV File</b> to the left
+            bottom rectagle with <b>"{% trans "Drag csv file for bulk upload here." %}"</b> title.
+            CSV File format specification is described <a href="#add_csv">later in the manual</a>.
+            And you can always drag a cursor over the question mark near the title to see a hint about
+            CSV file format:<br><br>
+            <img src="{{ STATIC_URL }}images/manual/en/add_products_hint.png"><br><br>
+            After uploading CSV, you will see boxes for uploading product-specific images for
+            products defined in CSV file. First uploaded image will be set as <b>default</b> for the product:
+            <br><br><img src="{{ STATIC_URL }}images/manual/en/upload_product_images.png">
+        </p>
+        <p class="info">
+            Product images are loaded in background mode, thus their appearance in the shop may
+            be deferred depending on the image size and amount.
+        </p>
+
+        <h3 id="csv">CSV files</h3>
+        <p>
+            CSV file is a text file where data items are separated with commas. The following sections
+            define CSV files used in <strong>Prestashop-sync service</strong> operations.
+        </p>
+        <p class="info">
+            All CSV files should have UTF-8 encoding.
+        </p>
+        <h4 id="update_csv">Update CSV file format</h4>
+        <p>
+            CSV file for the products update should have the following format:
+        </p>
+    <pre class="code">
+
+    ID,QUANTITY[,PRICE]
+    ID,QUANTITY[,PRICE]
+    ...
+    </pre>
+        <p>
+            Where<br>
+            <strong>ID</strong> is a unique product ID (EAN13, Reference or Supplier Reference),<br>
+            <strong>QUANTITY</strong> is a numerical product quantity,<br>
+            PRICE - new product price.
+        </p>
+        <p class="info">
+            Attributes inside square brackets are completely optional.
+        </p>
+        <h4 id="add_csv">Add products CSV format</h4>
+        <p>
+            CSV file for adding products should have the following format:
+        </p>
+    <pre class="code">
+
+    TITLE,CATEGORY,PRICE,QUANTITY,DESCRIPTION
+    TITLE,CATEGORY,PRICE,QUANTITY,DESCRIPTION
+    ...
+    </pre>
+        <p>
+            Where<br>
+            <strong>TITLE</strong> is a product title,<br>
+            <strong>CATEGORY</strong> - product category, either text or ID,<br>
+            <strong>PRICE</strong> - numerical product price,<br>
+            <strong>QUANTITY</strong> - numerical product quantity,<br>
+            <strong>DESCRIPTION</strong> - product description, can be empty.<br>
+        </p>
+        <p>
+            <br>
+            Still have questions? Please, contact us at
+            <a href="mailto:support@prestashop-sync.com">support@prestashop-sync.com</a>
+        </p>
+    </div>
+    </div>
+{% endblock content %}

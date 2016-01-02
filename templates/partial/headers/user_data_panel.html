@@ -1,0 +1,20 @@
+{% load i18n %}
+{% spaceless %}
+<div class="inset-block">
+    {% if not request.user.is_paid %}
+        {% include "partial/headers/battery_left.html" %}
+    {% endif %}
+    <a title="view account" href="{% url account %}" class="label link-highlight label-default">{{ request.user.email }}</a>
+    {# business / free #}
+    {% if request.user.is_paid %}
+        <span class="label label-default">{{ request.user.plan_name }}</span>
+    {% else %}
+        {# id is used in JS #}
+        {% if not show_upgrage %}
+        <a href="{% url payment %}" id="free_plan" class="label label-warning">{{ request.user.plan_name }}</a>
+        {% endif %}
+    {% endif %}
+</div>
+<span class="hidden" id="upgrade_plan_text">{% trans "upgrade" %}</span>
+<span class="hidden" id="free_plan_text">{% trans "free plan" %}</span>
+{% endspaceless %}
